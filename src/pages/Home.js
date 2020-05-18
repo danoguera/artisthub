@@ -10,8 +10,9 @@ class Home extends React.Component {
         }
     }
 
-    handleSubmit = (event) => {
-        this.props.history.push("/posts/" + event.target.value)
+    handlePhoto = (event) => {
+
+        this.props.history.push("/photographers");
     }
 
     render() {
@@ -22,7 +23,7 @@ class Home extends React.Component {
                     <h1>Tell us which service you are looking for:</h1>
 
                     <div class="services">
-                        <div onClick={ this.props.history.push("/photography")} class="service1">
+                        <div  onClick={ this.handlePhoto } class="service1">
                             <h3>Photo</h3>
                         </div>
                         <div class="service2">

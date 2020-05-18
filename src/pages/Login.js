@@ -22,7 +22,7 @@ class Login extends React.Component{
             let dato = fakeData.filter(data => data.email===email)[0] ;
             if ( dato && dato.password===password){
                 console.log("Access granted");
-                this.props.history.push("/photographers");
+                this.props.history.push("/home");
             } else{
                 this.setState({
                     password: "",
