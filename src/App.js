@@ -9,6 +9,7 @@ import Food from './pages/Food';
 import Wedding from './pages/Wedding';
 import Models from './pages/Models';
 import NavBar from './components/NavBar';
+import Home from './pages/Home';
 
 class App extends React.Component {
   constructor(){
@@ -25,6 +26,7 @@ class App extends React.Component {
         <Router>
           <Switch>
             <Route exact path="/login" component={Login}></Route>
+            <Route exact path="/home" component={Home}></Route>
             <Route exact path="/posts"  component={Posts}></Route>
             <Route exact path="/photographers"  component={Photographers}></Route>
             <Route exact path="/food"  component={Food}></Route>

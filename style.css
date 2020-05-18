@@ -1,0 +1,314 @@
+*{
+  text-decoration: none;
+  font-family: 'Oxygen', sans-serif;
+}
+
+body{
+  background-image: url("file:///Users/danoguera/dieago/makeit/top/project/images/dariusz-sankowski-mj2NwYH3wBA-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  
+  /* margin: 0;
+  padding: 0; */
+}
+
+body::after{
+  background-color: rgba(57, 49, 49, 0.7);
+}
+
+.mainContainer h1{
+  font-size: 40px;
+  text-align: center;
+  color: white;
+}
+
+.navBar{
+  width: 100%;
+  height: 100px;
+}
+
+.navBar .logo{
+  font-size: 45px;
+  color: #FFFFFF;
+  font-weight: 900;
+  display: block;
+  margin: 0 auto;
+  padding: 8px 0;
+  text-align: center;
+}
+
+.navBar nav ul {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.navBar nav ul li {
+  display: inline-block;
+  float: left;
+  list-style: none;
+  padding: 0 5px;
+}
+
+.navBar nav ul li a{
+  font-size: 17px;
+  color: #ffffff; 
+}
+
+.login{
+  position: absolute;
+  margin: auto;
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.box{
+  background-color: #E8E8E8;
+  width: 400px;
+  height: 250px;
+  margin: auto;
+  background: rgba(0,0,0,0.4);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.inputBox{
+  display: block;
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 10px;
+  background: transparent;
+  width: 90%;
+  height: 32px;
+  border: 1px solid #FFF;
+  outline: none;
+  font-size: 15px;
+  transition: 0.2s;
+  color: #FFF;
+}
+
+.submit-btn{
+  width: 120px;
+  height: 32px;
+  background: #F44336;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 20px;
+}
+
+.photographer-img{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photographer-pic{
+  max-width: 180px;
+  position: relative;
+  left: 0;
+  margin: 10px 0;
+  filter: drop-shadow(-6px 40px 23px rgba(black, 1.5));
+  border-radius: 6px;
+}
+
+.photographer-details{
+  padding: 10px 20px 0 20px;
+  border-radius: 5px;
+  color: #FFFFFF;
+}
+
+.photographer-details h1{
+  text-align: center;
+  margin: 17px 0;
+  font-size: 29px;
+}
+
+.photographer-details p{
+  font-size: 20px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0,0,0,0.4);
+  padding: 20px;
+  border-radius: 5px;
+  padding-bottom: 30px;
+  margin-top: 10px;
+}
+
+.navBar h1{
+  text-align: left;
+  margin: 0;
+}
+
+.profile-btn{
+  width: 220px;
+  height: 60px;
+  background: #F44336;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.services{
+ width: 100%;
+}
+
+.services div{
+  margin: 16px 16px 0;
+  width: calc(100% - 32px);
+  height: 250px;
+}
+
+.service1{
+  background-image: url("file:///Users/danoguera/dieago/makeit/top/project/images/andre-furtado-JtV6zyOZSrA-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #FFFFFF;
+  opacity: 0.8;
+}
+
+.service1 h3{
+  font-size: 50px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 230px;
+  text-shadow: 2px 2px 8px #111;
+  font-weight: 900;
+}
+
+.service2{
+  background-image: url("file:///Users/danoguera/dieago/makeit/top/project/images/christian-wiediger-wtmpzTgJEbU-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #FFFFFF;
+  opacity: 0.9;
+}
+
+.service2 h3{
+  font-size: 50px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 230px;
+  text-shadow: 2px 2px 8px #111;
+  font-weight: 900;
+}
+
+.service3{
+  background-image: url("file:///Users/danoguera/dieago/makeit/top/project/images/israel-palacio-Y20JJ_ddy9M-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #FFFFFF;
+  opacity: 0.9;
+}
+
+.service3 h3{
+  font-size: 50px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 230px;
+  text-shadow: 2px 2px 8px #111;
+  font-weight: 900;
+}
+
+@media only screen and (min-width: 1000px){
+
+  .navBar .logo{
+    margin: 20px 0;
+    text-align: left;
+    padding: 0px 40px 0 60px;
+    border-right: 3px solid #FFFFFF;
+    line-height: 38px;
+    padding: 0 50px 0 60px;
+    float: left;
+  }
+
+  .navBar nav ul {
+    margin: 0;
+    float: left;
+  }
+  
+  .navBar nav ul li {
+    display: inline-block;
+    float: left;
+    list-style: none;
+    padding: 0 11px;
+  }
+  
+  .navBar nav ul li a{
+    font-size: 20px;
+    color: #ffffff; 
+    line-height: 80px;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: rgba(0,0,0,0.4);
+    border-radius: 5px;
+  }
+
+  .profile-btn{
+    margin-top: 0;
+  }
+
+  .photographer-details{
+    padding: 0 20px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    width: 90%;
+  }
+  .photographer-details h1{
+    text-align: left;
+  }
+
+  button1{
+    float: right;
+    color: #FFFFFF;
+    margin: 20px 20px 20px 20px;
+    font-size: 20px;
+    border: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    line-height: 40px;
+    /* background-color: rgba(0,136,169,1); */
+  }
+
+  .services div{
+    margin: 16px 16px 0;
+    width: calc(33% - 32px) !important;
+    height: 300px;
+    float: left;
+  }
+
+  .service2 h3{
+    line-height: 200px;
+  }
+
+  .service1 h3{
+    line-height: 200px;
+  }
+
+  .service3 h3{
+    line-height: 200px;
+  }
+
+}
