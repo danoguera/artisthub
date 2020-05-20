@@ -1,38 +1,46 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'; 
 import './App.css';
+import Login from './pages/Login'; 
+import Posts from './pages/Posts'; 
+import Photographers from './pages/Photographers'; 
+import Aerial from './pages/Aerial'; 
+import Food from './pages/Food';
+import Wedding from './pages/Wedding';
+import Models from './pages/Models';
+import NavBar from './components/NavBar';
+import Home from './pages/Home';
 
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
 
-function App() {
-  let posts =[{"title":"Fotografia de bodas", "description": "Tomamos las mejores fotografias de su boda.", "post_image":"http://cdn3.upsocl.com/wp-content/uploads/2016/09/38A4705E00000578-0-image-m-55_1474455679307-2.jpg"},
-             
- {"title":"Fotografia aerea", "description":"Hacemos tomas aereas con drone", "post_image":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Quadcopter_camera_drone_in_flight.jpg/800px-Quadcopter_camera_drone_in_flight.jpg"},
-             
-{"title":"Fotografia modelos", "description": "Fotos de modelaje", "post_image":"http://www.buro247.mx/images/2-modelos-3a-edad.jpg"} ,
-{"title":"Fotografia de alimentos","description":"Tomamos las mejores fotos para tus catalogos", "post_image":"https://tierraquerida.com.co/wp-content/uploads/2019/08/bandeja-paisa-1080x694.jpg"}
-  ] ;
+    }  
+  } 
 
-
+  render(){ 
     return (
       <div className="App">
-        <header className="App-header">
+        <NavBar />
+        <Router>
+          <Switch>
+            <Route exact path="/login" component={Login}></Route>
+            <Route exact path="/home" component={Home}></Route>
+            <Route exact path="/posts"  component={Posts}></Route>
+            <Route exact path="/photographers"  component={Photographers}></Route>
+            <Route exact path="/food"  component={Food}></Route>
+            <Route exact path="/models"  component={Models}></Route>
+            <Route exact path="/aerial"  component={Aerial}></Route>
+            <Route exact path="/wedding"  component={Wedding}></Route>
+            <Route exact path="/posts/:id"  component={Posts}></Route>
+            <Route exact path="*"  component={Login}></Route>
+          </Switch>
+        </Router>
 
-        </header>
-        
-        <table>
-          <tbody>
-       {posts.map(post => 
-        <tr>
-          <td><img width="200" src={post.post_image} alt=""/></td>
-          <td> <h2>{post.title} </h2></td>
-          <td> <strong>{post.description} </strong></td>
-        </tr>
-        )} 
-        </tbody>
-      </table>
       </div>
     );
-  
-    
+  }  
 }
 
 
