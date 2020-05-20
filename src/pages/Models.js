@@ -1,20 +1,40 @@
 import React from 'react';
 import { postsModels } from '../components/fakeData'; 
+import axios from 'axios';
 
 class Models extends React.Component{
     constructor(){
         super();
         this.state = {
-
+            loading: true,
+            error: false,
+            posts:[], 
         } 
     } 
+
+    componentDidMount(){
+        axios({
+            url: "http://127.0.0.1:3000/posts/subcategory/models",
+            method: "GET",
+
+        })
+          .then(response =>{
+               this.setState({ posts: response.data})
+                console.log(response.data); 
+           } )
+          .catch(error => this.setState({error: error} ))
+          .finally( () => this.setState({loading: false})); 
+    }
+
 
     handleSubmit = (event) => {
         this.props.history.push("/posts/"+event.target.value)
     } 
 
     render(){
-        let posts = postsModels; 
+
+        if (this.state.loading){return <h1>Loading...</h1>};
+        let posts = this.state.posts;
         return (
             <React.Fragment>
                 <section>

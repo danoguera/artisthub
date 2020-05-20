@@ -17,7 +17,10 @@ class Aerial extends React.Component{
             method: "GET",
 
         })
-          .then(response => this.setState({ posts: response.data.posts}))
+          .then(response =>{
+               this.setState({ posts: response.data})
+                console.log(response.data); 
+           } )
           .catch(error => this.setState({error: error} ))
           .finally( () => this.setState({loading: false})); 
     }
@@ -29,9 +32,10 @@ class Aerial extends React.Component{
 
     render(){
         if (this.state.loading){return <h1>Loading...</h1>};
-        if (!this.state.error){return <h1>Error:{this.state.error}  </h1>}; 
+        //if (!this.state.error){return <h1>Error:{this.state.error}  </h1>}; 
         
         let posts = this.state.posts;
+        console.log(posts);
         return (
             <React.Fragment>
                 <section>
