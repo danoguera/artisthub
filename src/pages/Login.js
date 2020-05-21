@@ -21,7 +21,7 @@ class Login extends React.Component{
                 email: this.state.email,
                 password: this.state.password
             }
-        })
+            })
             .then(response => {
 
                 if (response.data == "lo que sea") {
@@ -37,20 +37,13 @@ class Login extends React.Component{
             .catch(error => this.setState({ error: error }))
             .finally(() => this.setState({ loading: false })); 
     
-
-
-
-
-
-        
     } 
 
     handleInput = (event) => {
 
         this.setState({
            [event.target.name]: event.target.value, 
-        })
-        
+        })    
     } 
 
     render(){
@@ -69,12 +62,9 @@ class Login extends React.Component{
             </div>
             </form>
             </main>
-
-
         )
 
     }
 } 
-
 
 export default Login;
