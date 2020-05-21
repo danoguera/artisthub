@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import { postsFood } from '../components/fakeData'; 
 
 class Food extends React.Component{
     constructor(){

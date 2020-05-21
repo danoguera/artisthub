@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'; 
+import {BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'; 
 import './App.css';
 import Login from './pages/Login'; 
 import Posts from './pages/Posts'; 
@@ -26,15 +26,15 @@ class App extends React.Component {
         <Router>
           <Switch>
             <Route exact path="/login" component={Login}></Route>
-            <Route exact path="/home" component={Home}></Route>
-            <Route exact path="/posts"  component={Posts}></Route>
-            <Route exact path="/photographers"  component={Photographers}></Route>
-            <Route exact path="/food"  component={Food}></Route>
-            <Route exact path="/models"  component={Models}></Route>
-            <Route exact path="/aerial"  component={Aerial}></Route>
-            <Route exact path="/wedding"  component={Wedding}></Route>
-            <Route exact path="/posts/:id"  component={Posts}></Route>
-            <Route exact path="*"  component={Login}></Route>
+            <PrivateRoute exact path="/home" component={Home}></PrivateRoute>
+            <PrivateRoute exact path="/posts"  component={Posts}></PrivateRoute>
+            <PrivateRoute exact path="/photographers"  component={Photographers}></PrivateRoute>
+            <PrivateRoute exact path="/food"  component={Food}></PrivateRoute>
+            <PrivateRoute exact path="/models"  component={Models}></PrivateRoute>
+            <PrivateRoute exact path="/aerial"  component={Aerial}></PrivateRoute>
+            <PrivateRoute exact path="/wedding"  component={Wedding}></PrivateRoute>
+            <PrivateRoute exact path="/posts/:id"  component={Posts}></PrivateRoute>
+            <PrivateRoute exact path="*"  component={Login}></PrivateRoute>
           </Switch>
         </Router>
 
@@ -43,6 +43,19 @@ class App extends React.Component {
   }  
 }
 
+
+function PrivateRoute(props){
+
+  const token = localStorage.getItem("token");
+
+  if (!token){
+    return <Redirect to="/login"></Redirect>
+  } 
+
+  return (<Route {...props} ></Route>);
+
+
+} 
 
 
 

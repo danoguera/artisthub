@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/styles/Home.css'
-import photography from './Photography'
+
 
 class Home extends React.Component {
     constructor() {

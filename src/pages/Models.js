@@ -1,5 +1,4 @@
 import React from 'react';
-import { postsModels } from '../components/fakeData'; 
 import axios from 'axios';
 
 class Models extends React.Component{
@@ -16,13 +15,18 @@ class Models extends React.Component{
         axios({
             url: "http://127.0.0.1:3000/posts/subcategory/models",
             method: "GET",
+            headers: { "Authorization": localStorage.getItem("token") } 
 
         })
           .then(response =>{
                this.setState({ posts: response.data})
-                console.log(response.data); 
            } )
-          .catch(error => this.setState({error: error} ))
+          .catch(error =>{
+            localStorage.removeItem("token");
+            this.props.history.push("/login");
+            this.setState({error: true} )
+           
+           } )
           .finally( () => this.setState({loading: false})); 
     }
 
@@ -34,6 +38,8 @@ class Models extends React.Component{
     render(){
 
         if (this.state.loading){return <h1>Loading...</h1>};
+        if (this.state.error){return <h1>Something went wrong..</h1>}  
+
         let posts = this.state.posts;
         return (
             <React.Fragment>

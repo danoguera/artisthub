@@ -1,5 +1,4 @@
 import React from 'react';
-import { postsWedding } from '../components/fakeData'; 
 import axios from 'axios';
 
 class Wedding extends React.Component{
