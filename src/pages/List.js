@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-class Food extends React.Component{
+class List extends React.Component{
     constructor(){
         super();
         this.state = {
@@ -12,16 +12,23 @@ class Food extends React.Component{
     } 
 
     componentDidMount(){
+        console.log(this.props.match.path);
+        const subcategory = this.props.match.path;
         axios({
-            url: "http://127.0.0.1:3000/posts/subcategory/food",
+            url: "http://127.0.0.1:3000/posts/subcategory" + subcategory,
             method: "GET",
+            headers: { "Authorization": localStorage.getItem("token") } 
 
         })
           .then(response =>{
                this.setState({ posts: response.data})
-                console.log(response.data); 
            } )
-          .catch(error => this.setState({error: error} ))
+          .catch(error =>{
+            localStorage.removeItem("token");
+            this.props.history.push("/login");
+            this.setState({error: true} )
+           
+           } )
           .finally( () => this.setState({loading: false})); 
     }
 
@@ -31,18 +38,19 @@ class Food extends React.Component{
     } 
 
     render(){
+
         if (this.state.loading){return <h1>Loading...</h1>};
+        if (this.state.error){return <h1>Something went wrong..</h1>}  
 
         let posts = this.state.posts;
         return (
-
             <React.Fragment>
                 <section>
-                    <h1>Some of our dishes:</h1>
+                    <h1>We have the following artists:</h1>
                     {posts && posts.length > 0 && posts.map(post => (
                         <div class="container">
                             <div class="photographer-img">
-                                <img src={require(`../assets/images/${post.post_image}`)} alt="" class="photographer-pic" />
+                                <img src={post.post_image.indexOf("http") >=0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" class="photographer-pic" />
                             </div>
                             <div class="photographer-details">
                                 <header>
@@ -50,7 +58,7 @@ class Food extends React.Component{
                                     <p>{post.description} </p>
                                 </header>
                             </div>
-                            <button type="button" value={post.id}  onClick={this.handleSubmit} class="profile-btn">View Post</button>
+                            <button type="button" value={post.id} onClick={this.handleSubmit} class="profile-btn">View Post</button>
                         </div>
                     ))}
                 </section>
@@ -59,4 +67,5 @@ class Food extends React.Component{
     }
 } 
 
-export default Food;
+
+export default List;
