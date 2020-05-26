@@ -1,4 +1,4 @@
-button1{
+button{
     float: right;
     color: #FFFFFF;
     margin: 20px 20px 20px 20px;
@@ -7,5 +7,5 @@ button1{
     border-radius: 5px;
     cursor: pointer;
     line-height: 40px;
-    /* background-color: rgba(0,136,169,1); */
+    background-color: transparent; 
   }

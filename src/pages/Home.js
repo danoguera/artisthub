@@ -19,17 +19,17 @@ class Home extends React.Component {
         return (
 
             <React.Fragment>
-                <div class="mainContainer">
+                <div className="mainContainer">
                     <h1>Tell us which service you are looking for:</h1>
 
-                    <div class="services">
-                        <div  onClick={ this.handlePhoto } class="service1">
+                    <div className="services">
+                        <div  onClick={ this.handlePhoto } className="service1">
                             <h3>Photo</h3>
                         </div>
-                        <div class="service2">
+                        <div className="service2">
                             <h3>Video</h3>
                         </div>
-                        <div class="service3">
+                        <div className="service3">
                             <h3>Music</h3>
                         </div>
                     </div>

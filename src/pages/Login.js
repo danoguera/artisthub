@@ -23,10 +23,11 @@ class Login extends React.Component{
             }
             })
             .then(response => {
-                console.log(response); 
-
+                //console.log(response); 
                 localStorage.setItem("token",response.data);
-                this.props.history.push("/home");
+                this.props.onUpdate(response.data);
+                this.props.history.push("/home");  //Ojo, deja de funcionar
+
 
             })
             .catch(error =>{

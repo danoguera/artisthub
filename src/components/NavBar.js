@@ -1,15 +1,11 @@
 import React from 'react';
 import '../assets/styles/SignIn.css'
+import { Link} from 'react-router-dom'; 
 
 const navBar = (props) =>{ 
 
-  const token = localStorage.getItem("token");
-  console.log(token);
-  
-  function signout(){
-    localStorage.removeItem("token");
-    this.props.history.push("/login");
-  } 
+  const token = props.token;
+    
 
   return (
     <header>
@@ -23,20 +19,14 @@ const navBar = (props) =>{
       </nav>
   { !token ?  (
       <React.Fragment>    
-      <a href="/signup">
-        <button1 className="btn">Sign Up</button1>
-      </a>
-      <a href="/signin">
-        <button1 className="btn">Sign In</button1>
-     </a> 
+
+      <Link to='/login'><button>Sign In</button></Link>
+      <Link to='/signup'><button>Sign Up</button></Link>
      </React.Fragment> 
       ) : (
-        <React.Fragment>    
-
-        <a href="/signin">
-          <button1 onClick={signout} className="btn">Sign Out</button1>
-       </a> 
-       </React.Fragment> 
+        <React.Fragment>
+          <Link to='/signout'><button>Sign Out</button></Link>
+        </React.Fragment> 
         ) 
     } 
 

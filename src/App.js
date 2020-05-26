@@ -7,6 +7,7 @@ import Photographers from './pages/Photographers';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import List from './pages/List';
+import SignOut from './pages/SignOut';
 
 class App extends React.Component {
   constructor(){
@@ -16,13 +17,23 @@ class App extends React.Component {
     }  
   } 
 
+  updateTokenStatus = (token) => {
+    console.log("Entre en el updateTokenStatus!");
+    this.setState({
+      token
+    });
+
+  } 
+  //<Route exact path="/login" component={Login}></Route>
   render(){ 
     return (
       <div className="App">
-        <NavBar/>
+
+
         <Router>
+          <NavBar token={this.state.token}  />
           <Switch>
-            <Route exact path="/login" component={Login}></Route>
+            <Route exact path='/login' render={(props) => <Login {...props}  onUpdate={this.updateTokenStatus}/> }/>
             <PrivateRoute exact path="/home" component={Home}></PrivateRoute>
             <PrivateRoute exact path="/posts"  component={Posts}></PrivateRoute>
             <PrivateRoute exact path="/photographers"  component={Photographers}></PrivateRoute>
@@ -31,6 +42,7 @@ class App extends React.Component {
             <PrivateRoute exact path="/aerial"  component={List}></PrivateRoute>
             <PrivateRoute exact path="/wedding"  component={List}></PrivateRoute>
             <PrivateRoute exact path="/posts/:id"  component={Posts}></PrivateRoute>
+            <Route exact path="/signout" render={(props) => <SignOut {...props}  onUpdate={this.updateTokenStatus}/> }/>
             <PrivateRoute exact path="*"  component={Login}></PrivateRoute>
              
           </Switch>
