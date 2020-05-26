@@ -12,7 +12,6 @@ class List extends React.Component{
     } 
 
     componentDidMount(){
-        console.log(this.props.match.path);
         const subcategory = this.props.match.path;
         axios({
             url: "http://127.0.0.1:3000/posts/subcategory" + subcategory,

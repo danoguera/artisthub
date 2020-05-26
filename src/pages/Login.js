@@ -13,7 +13,6 @@ class Login extends React.Component{
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log("entre en handle Submit");
         axios({
             url: "http://127.0.0.1:3000/users/signin",
             method: "POST",
@@ -23,14 +22,10 @@ class Login extends React.Component{
             }
             })
             .then(response => {
-                console.log(response); 
-
                 localStorage.setItem("token",response.data);
                 this.props.history.push("/home");
-
             })
             .catch(error =>{
-                console.log(error); 
                  this.setState({ error: error,
                     password: "",
                 })

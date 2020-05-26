@@ -4,7 +4,6 @@ import '../assets/styles/SignIn.css'
 const navBar = (props) =>{ 
 
   const token = localStorage.getItem("token");
-  console.log(token);
   
   function signout(){
     localStorage.removeItem("token");
