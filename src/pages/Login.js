@@ -15,7 +15,8 @@ class Login extends React.Component{
         event.preventDefault();
         console.log("entre en handle Submit");
         axios({
-            url: "http://127.0.0.1:3000/users/signin",
+            //url: "http://127.0.0.1:3000/users/signin",
+            url: process.env.REACT_APP_SERVER_URL+"/users/signin",
             method: "POST",
             data: {
                 email: this.state.email,
@@ -27,11 +28,9 @@ class Login extends React.Component{
                 localStorage.setItem("token",response.data);
                 this.props.onUpdate(response.data);
                 this.props.history.push("/home");  //Ojo, deja de funcionar
-
-
             })
             .catch(error =>{
-                console.log(error); 
+                console.dir(error); 
                  this.setState({ error: error,
                     password: "",
                 })

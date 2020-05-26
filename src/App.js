@@ -33,6 +33,7 @@ class App extends React.Component {
         <Router>
           <NavBar token={this.state.token}  />
           <Switch>
+          <Route exact path='/' render={(props) => <Login {...props}  onUpdate={this.updateTokenStatus}/> }/>
             <Route exact path='/login' render={(props) => <Login {...props}  onUpdate={this.updateTokenStatus}/> }/>
             <PrivateRoute exact path="/home" component={Home}></PrivateRoute>
             <PrivateRoute exact path="/posts"  component={Posts}></PrivateRoute>

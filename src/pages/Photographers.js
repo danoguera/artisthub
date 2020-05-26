@@ -1,5 +1,5 @@
 import React from 'react';
-import { postPhotoTypes } from '../components/fakeData';
+import { postPhotoTypes } from '../components/Data';
 
 class Photographers extends React.Component{
     constructor(){
