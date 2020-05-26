@@ -18,13 +18,13 @@ class App extends React.Component {
   } 
 
   updateTokenStatus = (token) => {
-    console.log("Entre en el updateTokenStatus!");
+
     this.setState({
       token
     });
 
   } 
-  //<Route exact path="/login" component={Login}></Route>
+
   render(){ 
     return (
       <div className="App">
@@ -45,7 +45,6 @@ class App extends React.Component {
             <PrivateRoute exact path="/posts/:id"  component={Posts}></PrivateRoute>
             <Route exact path="/signout" render={(props) => <SignOut {...props}  onUpdate={this.updateTokenStatus}/> }/>
             <PrivateRoute exact path="*"  component={Login}></PrivateRoute>
-             
           </Switch>
         </Router>
 
