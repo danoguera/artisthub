@@ -8,6 +8,8 @@ import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import List from './pages/List';
 import SignOut from './pages/SignOut';
+import CreatePost from './pages/CreatePost';
+
 
 class App extends React.Component {
   constructor(){
@@ -17,6 +19,14 @@ class App extends React.Component {
     }  
   } 
 
+  componentDidMount(){
+    if (localStorage.getItem("token") !== null){
+      this.setState({
+        token: localStorage.getItem("token"),
+      } )
+      console.log("Entre en el didMount")
+    } 
+  } 
   updateTokenStatus = (token) => {
 
     this.setState({
@@ -42,6 +52,7 @@ class App extends React.Component {
             <PrivateRoute exact path="/models"  component={List}></PrivateRoute>
             <PrivateRoute exact path="/aerial"  component={List}></PrivateRoute>
             <PrivateRoute exact path="/wedding"  component={List}></PrivateRoute>
+            <PrivateRoute exact path="/posts/create"  component={CreatePost}></PrivateRoute>
             <PrivateRoute exact path="/posts/:id"  component={Posts}></PrivateRoute>
             <Route exact path="/signout" render={(props) => <SignOut {...props}  onUpdate={this.updateTokenStatus}/> }/>
             <PrivateRoute exact path="*"  component={Login}></PrivateRoute>
