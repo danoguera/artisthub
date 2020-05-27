@@ -13,7 +13,6 @@ class Login extends React.Component{
 
     handleSubmit = (event) => {
         event.preventDefault();
-
         axios({
             url: "http://127.0.0.1:3000/users/signin",
             method: "POST",
@@ -23,18 +22,14 @@ class Login extends React.Component{
             }
             })
             .then(response => {
-
-                if (response.data == "lo que sea") {
-                    console.log("Access granted");
-                    this.props.history.push("/home");
-                } else {
-                    this.setState({
-                        password: "",
-                    })
-                    console.log("Acceso denegado");
-                }
+                localStorage.setItem("token",response.data);
+                this.props.history.push("/home");
             })
-            .catch(error => this.setState({ error: error }))
+            .catch(error =>{
+                 this.setState({ error: error,
+                    password: "",
+                })
+             })
             .finally(() => this.setState({ loading: false })); 
     
     } 
@@ -47,17 +42,19 @@ class Login extends React.Component{
     } 
 
     render(){
+        if (this.state.loading){return <h1>Loading...</h1>}
+      
 
         return (
             <main>
             <form onSubmit={this.handleSubmit} >
-            <div class="login">
-            <div class="box">
+            <div className="login">
+            <div className="box">
                 <h1>Welcome to artistHub!</h1>
                 <h2>Sign in and choose your service...</h2>
-                <input type="text" class="inputBox" placeholder="E-mail address" value={this.state.email} onChange={this.handleInput} name="email" />
-                <input type="password" class="inputBox" placeholder="Password" value={this.state.password} onChange={this.handleInput} name="password"/>
-                <input type="submit" onSubmit={this.handleSubmit }  class="submit-btn" placeholder="Sign in" value="Submit" />
+                <input type="text" className="inputBox" placeholder="E-mail address" value={this.state.email} onChange={this.handleInput} name="email" />
+                <input type="password" className="inputBox" placeholder="Password" value={this.state.password} onChange={this.handleInput} name="password"/>
+                <input type="submit" onSubmit={this.handleSubmit }  className="submit-btn" placeholder="Sign in" value="Submit" />
             </div>
             </div>
             </form>
