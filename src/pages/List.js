@@ -42,7 +42,7 @@ class List extends React.Component{
         if (this.state.error){return <h1>Something went wrong..</h1>}  
 
         let posts = this.state.posts;
-        console.log(posts);
+
         return (
             <React.Fragment>
                 <section>

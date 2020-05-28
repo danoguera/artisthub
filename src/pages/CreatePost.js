@@ -22,7 +22,6 @@ class CreatePost extends React.Component{
     } 
 
     handleSelect = (event) => {
-        console.log("Name:",event.target.name, "Valor:",event.target.value)
         this.setState({
            [event.target.name]: event.target.value 
         })
@@ -52,13 +51,11 @@ class CreatePost extends React.Component{
             }
             })
             .then(response => {
-                console.log(response.data);
                 //localStorage.setItem("token",response.data);
                 //this.props.onUpdate(response.data);
                 this.props.history.push("/posts/"+response.data._id);  
             })
             .catch(error =>{
-                console.log(error);
                  this.setState({ error: error,
                     password: "",
                 })

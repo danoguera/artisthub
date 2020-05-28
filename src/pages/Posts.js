@@ -10,7 +10,6 @@ class Posts extends React.Component{
     } 
 
     componentDidMount(){
-        console.log("Didmount de Posts.js");
         const postId = this.props.match.params.id;
 
         axios({
@@ -20,7 +19,6 @@ class Posts extends React.Component{
 
         })
           .then(response =>{
-              console.log(response.data);
                this.setState( response.data)
            } )
           .catch(error =>{

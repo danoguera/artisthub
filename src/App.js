@@ -6,6 +6,7 @@ import Posts from './pages/Posts';
 import Photographers from './pages/Photographers'; 
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
+import HomeProvider from './pages/HomeProvider';
 import List from './pages/List';
 import SignOut from './pages/SignOut';
 import CreatePost from './pages/CreatePost';
@@ -24,7 +25,6 @@ class App extends React.Component {
       this.setState({
         token: localStorage.getItem("token"),
       } )
-      console.log("Entre en el didMount")
     } 
   } 
   updateTokenStatus = (token) => {
@@ -45,17 +45,18 @@ class App extends React.Component {
           <Switch>
           <Route exact path='/' render={(props) => <Login {...props}  onUpdate={this.updateTokenStatus}/> }/>
             <Route exact path='/login' render={(props) => <Login {...props}  onUpdate={this.updateTokenStatus}/> }/>
-            <PrivateRoute exact path="/home" component={Home}></PrivateRoute>
-            <PrivateRoute exact path="/posts"  component={Posts}></PrivateRoute>
-            <PrivateRoute exact path="/photographers"  component={Photographers}></PrivateRoute>
-            <PrivateRoute exact path="/food"  component={List}></PrivateRoute>
-            <PrivateRoute exact path="/models"  component={List}></PrivateRoute>
-            <PrivateRoute exact path="/aerial"  component={List}></PrivateRoute>
-            <PrivateRoute exact path="/wedding"  component={List}></PrivateRoute>
-            <PrivateRoute exact path="/posts/create"  component={CreatePost}></PrivateRoute>
-            <PrivateRoute exact path="/posts/:id"  component={Posts}></PrivateRoute>
+            <UserRoute exact path="/home" component={Home}></UserRoute>
+            <ProviderRoute exact path="/homeProvider" component={HomeProvider}></ProviderRoute>
+            <UserRoute exact path="/posts"  component={Posts}></UserRoute>
+            <UserRoute exact path="/photographers"  component={Photographers}></UserRoute>
+            <UserRoute exact path="/food"  component={List}></UserRoute>
+            <UserRoute exact path="/models"  component={List}></UserRoute>
+            <UserRoute exact path="/aerial"  component={List}></UserRoute>
+            <UserRoute exact path="/wedding"  component={List}></UserRoute>
+            <ProviderRoute exact path="/posts/create"  component={CreatePost}></ProviderRoute>
+            <UserRoute exact path="/posts/:id"  component={Posts}></UserRoute>
             <Route exact path="/signout" render={(props) => <SignOut {...props}  onUpdate={this.updateTokenStatus}/> }/>
-            <PrivateRoute exact path="*"  component={Login}></PrivateRoute>
+            <Route exact path="*"  component={Login}></Route>
           </Switch>
         </Router>
 
@@ -65,20 +66,31 @@ class App extends React.Component {
 }
 
 
-function PrivateRoute(props){
+function UserRoute(props){
 
   const token = localStorage.getItem("token");
-
+  const typeOfUser = localStorage.getItem("typeOfUser");
   if (!token){
     return <Redirect to="/login"></Redirect>
   } 
 
-  return (<Route {...props} ></Route>);
-
-
+  if ( token && typeOfUser==="user" ){
+    return (<Route {...props} ></Route>);    
+  } 
+  return <Redirect to="/homeProvider"></Redirect>
 } 
 
-
+function ProviderRoute(props){
+  const token = localStorage.getItem("token");
+  const typeOfUser = localStorage.getItem("typeOfUser");
+  if (!token){
+    return <Redirect to="/login"></Redirect>
+  } 
+  if ( token && typeOfUser==="provider" ){
+    return (<Route {...props} ></Route>);    
+  } 
+  return <Redirect to="/home"></Redirect>
+} 
 
  
 
