@@ -58,7 +58,7 @@ class List extends React.Component{
                                     <p>{post.description} </p>
                                 </header>
                             </div>
-                            <button type="button" value={post.id} onClick={this.handleSubmit} class="profile-btn">View Post</button>
+                            <button type="button" value={post._id} onClick={this.handleSubmit} class="profile-btn">View Post</button>
                         </div>
                     ))}
                 </section>

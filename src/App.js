@@ -54,7 +54,8 @@ class App extends React.Component {
             <UserRoute exact path="/aerial"  component={List}></UserRoute>
             <UserRoute exact path="/wedding"  component={List}></UserRoute>
             <ProviderRoute exact path="/posts/create"  component={CreatePost}></ProviderRoute>
-            <UserRoute exact path="/posts/:id"  component={Posts}></UserRoute>
+            <ProviderRoute exact path="/posts/create/:id"  component={CreatePost}></ProviderRoute>
+            <GenericRoute exact path="/posts/:id"  component={Posts}></GenericRoute>
             <Route exact path="/signout" render={(props) => <SignOut {...props}  onUpdate={this.updateTokenStatus}/> }/>
             <Route exact path="*"  component={Login}></Route>
           </Switch>
@@ -65,6 +66,15 @@ class App extends React.Component {
   }  
 }
 
+
+function GenericRoute(props){
+
+  const token = localStorage.getItem("token");
+  if (!token){
+    return <Redirect to="/login"></Redirect>
+  } 
+  return (<Route {...props} ></Route>);    
+}
 
 function UserRoute(props){
 

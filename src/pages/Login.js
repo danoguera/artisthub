@@ -1,7 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import jsonwebtoken from 'jsonwebtoken';
-
 
 class Login extends React.Component{
     constructor(){
@@ -61,22 +59,20 @@ class Login extends React.Component{
 
         return (
             <main>
-            <form onSubmit={this.handleSubmit} >
-            <div className="login">
-            <div className="box">
-                <h1>Welcome to artistHub!</h1>
-                <h2>Sign in and choose your service...</h2>
-                <input type="text" className="inputBox" placeholder="E-mail address" value={this.state.email} onChange={this.handleInput} name="email" />
-                <input type="password" className="inputBox" placeholder="Password" value={this.state.password} onChange={this.handleInput} name="password"/>
-                <label htmlFor="isProvider">Eres proveedor?</label><input type="checkbox" name="isProvider" id="isProvider" checked={this.state.isProvider} onChange={this.handleInput}/>  <br/>
-                <input type="submit" onSubmit={this.handleSubmit }  className="submit-btn" placeholder="Sign in" value="Submit" />
-                
-            </div>
-            </div>
-            </form>
+                <form onSubmit={this.handleSubmit} >
+                    <div className="login">
+                        <div className="box">
+                            <h1>Welcome to artistHub!</h1>
+                            <h2>Sign in and choose your service...</h2>
+                            <input type="text" className="inputBox" placeholder="E-mail address" value={this.state.email} onChange={this.handleInput} name="email" />
+                            <input type="password" className="inputBox" placeholder="Password" value={this.state.password} onChange={this.handleInput} name="password" />
+                            <label htmlFor="isProvider">Eres proveedor?</label><input type="checkbox" name="isProvider" id="isProvider" checked={this.state.isProvider} onChange={this.handleInput} />  <br />
+                            <input type="submit" onSubmit={this.handleSubmit} className="submit-btn" placeholder="Sign in" value="Submit" />
+                        </div>
+                    </div>
+                </form>
             </main>
         )
-
     }
 } 
 
