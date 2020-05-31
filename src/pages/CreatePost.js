@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './CreatePost.css';
 
 class CreatePost extends React.Component{
     constructor(){
@@ -76,14 +77,15 @@ class CreatePost extends React.Component{
                 country,
                 subcategory,
                 category,
-                post_image,
+                post_image: "https://mltmpgeox6sf.i.optimole.com/M9I38xY-EO2wV8tf/w:auto/h:auto/q:auto/https://redbanksmilesnj.com/wp-content/uploads/2015/11/man-avatar-placeholder.png",
             }
             })
             .then(response => {
                 this.props.history.push("/posts/"+response.data._id);  
             })
             .catch(error =>{
-                alert("No es posible modificar el post");
+                console.log(error.response.data);
+                alert("No es posible crear/modificar el post");
                  this.setState({ error: error,
                     password: "",
                 })
@@ -104,54 +106,70 @@ class CreatePost extends React.Component{
 
         return (
             <main>
-                <form onSubmit={this.handleSubmit} >
-                    <h1>Create your service</h1>
-                    <h2>Please fill the form...</h2>
-                    <label htmlFor="title" >Title: </label>
-                    <input id="title" name="title" type="text" className="inputBox" placeholder="Title..." value={this.state.title} onChange={this.handleInput} />
-                    <label htmlFor="description"> Description: </label>
-                    <textarea id="description" name="description" className="inputBox" placeholder="Describe your service ..." value={this.state.description} onChange={this.handleInput} />
-                    <label htmlFor="category">Choose a service:</label>
-                    <select name="category" value={this.state.category} onChange={this.handleSelect} id="category">
-                        <option value="music">Music</option>
-                        <option value="photography">Photography</option>
-                        <option value="videography">Videography</option>
-                    </select>
-                    <br />
-
-                    <label htmlFor="subcategory">Choose a subcategory:</label>
-                    <select value={this.state.subcategory} name="subcategory" id="subcategory" onChange={this.handleSelect} >
-                        {this.state.subcategoryList.map(option => (
-                            <option value={option} > {option.charAt(0).toUpperCase() + option.slice(1)} </option>
-                        )
-                        )};
-                </select>
-                <br />
-
-                    <label htmlFor="post_image" >Post Image: </label>
-                    <input id="post_image" name="post_image" type="text" className="inputBox" placeholder="Ruta a la foto..." value={this.state.post_image} onChange={this.handleInput} />
-                    <br />
-
-                    <select onChange={this.handleInput} value = {this.state.country} name="country" class="countries" id="countryId">
-                        <option value="">Select Country</option>
-                        <option value="Australia">Australia </option>
-                        <option value="Colombia">Colombia</option>
-                    </select>
-                    <select onChange={this.handleInput} value={this.state.state} name="state" class="states" id="stateId">
-                        <option value="">Select State</option>
-                        <option value="Victoria">Victoria</option>
-                        <option value="Atlantico">Atlantico</option>
-                        <option value="Bogota">Bogota</option>
-                    </select>
-                    <select onChange={this.handleInput} value = {this.state.city} name="city" class="cities" id="cityId">
-                        <option value="Bogota">Bogota</option>
-                        <option value="Barranquilla">Curramba</option>
-                        <option value="Melbourne">Melbourne</option>
-                    </select>
-                    <br />
-
-                    <input type="submit" onSubmit={this.handleSubmit} className="submit-btn"  value={this.state.postId ? "Update" : "Submit"}  />
-                </form>
+                <section>
+                    <div class="service">
+                        <div class="boxService">
+                            <h1>Create your service</h1>
+                            <h2>Please fill up the form</h2>
+                            <form onSubmit={this.handleSubmit} >
+                                <input id="title" name="title" type="text" className="inputBoxService" placeholder="Enter your service title" value={this.state.title} onChange={this.handleInput} />
+                                <br />
+                                <textarea id="description" name="description" className="textBox" placeholder="Enter your service description" value={this.state.description} onChange={this.handleInput} />
+                                <br />
+                                <select name="category" value={this.state.category} onChange={this.handleSelect} id="category">
+                                    <option value="">Pick your Service:</option>
+                                    <option value="music">Music</option>
+                                    <option value="photography">Photography</option>
+                                    <option value="videography">Videography</option>
+                                </select>
+                                <br />
+                                <select name="subcategory" id="subcategory" value={this.state.subcategory} onChange={this.handleSelect}>
+                                    <option value="">Select a Subcategory</option>
+                                    <option value="wedding">Wedding</option>
+                                    <option value="aerial">Aerial</option>
+                                    <option value="food">Food</option>
+                                    <option value="models">Models</option>
+                                </select>
+                                <br />
+                                <select onChange={this.handleInput} value={this.state.country} name="country" class="countries" id="countryId">
+                                    <option value="">Select your country:</option>
+                                    <option value="Australia">Australia </option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="Congo">Congo</option>
+                                    <option value="Croatia">Croatia</option>
+                                    <option value="Cyprus">Cyprus</option>
+                                </select>
+                                <br />
+                                <select onChange={this.handleInput} value={this.state.state} name="state" class="states" id="stateId">
+                                    <option value="">Select your state:</option>
+                                    <option value="Victoria">Victoria</option>
+                                    <option value="Atlantico">Atlantico</option>
+                                    <option value="Bogota">Bogota</option>
+                                    <option value="Antioquia">Antioquia</option>
+                                    <option value="Santander">Santander</option>
+                                </select>
+                                <br />
+                                <select onChange={this.handleInput} value={this.state.city} name="city" class="cities" id="cityId">
+                                    <option value="" >Select your city:</option>
+                                    <option value="Bogota">Bogota</option>
+                                    <option value="Barranquilla">Curramba</option>
+                                    <option value="Melbourne">Melbourne</option>
+                                    <option value="Ciudad1">Ciudad1</option>
+                                    <option value="Ciudad2">Ciudad2</option>
+                                    <option value="Ciudad3">Ciudad3</option>
+                                </select>
+                                <br />
+                                <input id="post_image" name="post_image" type="file" value={this.state.post_image_ooo} onChange={this.handleInput} />
+                                <label for="post_image">
+                                    <span class="material-icons">cloud_upload</span>
+                                    <p>Upload a Photo</p>
+                                </label>
+                                <br />
+                                <input type="submit" class="submit-btn" onSubmit={this.handleSubmit} className="submit-btn" value={this.state.postId ? "Update" : "Submit"} />
+                            </form>
+                        </div>
+                    </div>
+                </section>
             </main>
         )
 
