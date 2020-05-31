@@ -9,7 +9,7 @@ const navBar = (props) =>{
 
   return (
     <header>
-      <a href="/" className="logo">aH</a>
+      <a href={localStorage.getItem("typeOfUser")==="provider" ? "/homeProvider" :"/home"} className="logo">aH</a>
       <nav>
         <ul>
           <li><a href="/aboutus">About Us</a></li>

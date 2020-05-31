@@ -10,7 +10,7 @@ import HomeProvider from './pages/HomeProvider';
 import List from './pages/List';
 import SignOut from './pages/SignOut';
 import CreatePost from './pages/CreatePost';
-
+import ListProviderPosts from './pages/ListProviderPosts';
 
 class App extends React.Component {
   constructor(){
@@ -47,6 +47,7 @@ class App extends React.Component {
             <Route exact path='/login' render={(props) => <Login {...props}  onUpdate={this.updateTokenStatus}/> }/>
             <UserRoute exact path="/home" component={Home}></UserRoute>
             <ProviderRoute exact path="/homeProvider" component={HomeProvider}></ProviderRoute>
+            <ProviderRoute exact path="/list" component={ListProviderPosts}></ProviderRoute>
             <UserRoute exact path="/posts"  component={Posts}></UserRoute>
             <UserRoute exact path="/photographers"  component={Photographers}></UserRoute>
             <UserRoute exact path="/food"  component={List}></UserRoute>
