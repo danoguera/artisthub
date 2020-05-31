@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import HomeProvider from './pages/HomeProvider';
 import List from './pages/List';
 import SignOut from './pages/SignOut';
+import SignUp from './pages/SignUp';
 import CreatePost from './pages/CreatePost';
 import ListProviderPosts from './pages/ListProviderPosts';
 
@@ -57,6 +58,7 @@ class App extends React.Component {
             <ProviderRoute exact path="/posts/create"  component={CreatePost}></ProviderRoute>
             <ProviderRoute exact path="/posts/create/:id"  component={CreatePost}></ProviderRoute>
             <GenericRoute exact path="/posts/:id"  component={Posts}></GenericRoute>
+            <Route exact path="/signup" component={SignUp}></Route>
             <Route exact path="/signout" render={(props) => <SignOut {...props}  onUpdate={this.updateTokenStatus}/> }/>
             <Route exact path="*"  component={Login}></Route>
           </Switch>
