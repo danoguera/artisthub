@@ -54,8 +54,10 @@ class CreatePost extends React.Component{
          } 
     } 
 
-    handleSubmit = (event) => {
+    handleSubmit = async(event) => {
         event.preventDefault();
+        //let post_image= await this.fileUpload(); 
+        //post_image="http://127.0.0.1:3002/uploads/images/"+post_image;
         let method, url;
         if (this.state.postId){
             method= "PUT";
@@ -63,22 +65,28 @@ class CreatePost extends React.Component{
         } else{
             method= "POST";
             url= process.env.REACT_APP_SERVER_URL+"/posts/";
-        } 
-        const {title, description, city, state, country, subcategory, category, post_image} = this.state; 
+        }
+        //console.log("El valor de post image", post_image);
+        //if (post_image===""){
+        //    post_image= "https://mltmpgeox6sf.i.optimole.com/M9I38xY-EO2wV8tf/w:auto/h:auto/q:auto/https://redbanksmilesnj.com/wp-content/uploads/2015/11/man-avatar-placeholder.png"
+        //} 
+        const fd = new FormData();
+        fd.append('photo',this.state.selectedFile,"photo");
+        
+        const {title, description, city, state, country, subcategory, category} = this.state; 
+        fd.set("title", title);
+        fd.set("description", description);
+        fd.set("city", city);
+        fd.set("state", state);
+        fd.set("country", country);
+        fd.set("subcategory", subcategory);
+        fd.set("category", category);
+
         axios({
             url,
             method,
             headers: { "Authorization": localStorage.getItem("token") },
-            data: {
-                title,
-                description,
-                city,
-                state, 
-                country,
-                subcategory,
-                category,
-                post_image: "https://mltmpgeox6sf.i.optimole.com/M9I38xY-EO2wV8tf/w:auto/h:auto/q:auto/https://redbanksmilesnj.com/wp-content/uploads/2015/11/man-avatar-placeholder.png",
-            }
+            data: fd,
             })
             .then(response => {
                 this.props.history.push("/posts/"+response.data._id);  
@@ -94,11 +102,44 @@ class CreatePost extends React.Component{
     
     } 
 
+    fileSelectedHandler = (event) => {
+        this.setState({ 
+          selectedFile: event.target.files[0],
+        })
+    }
+
     handleInput = (event) => {
         this.setState({
            [event.target.name]: event.target.value, 
         })    
-    } 
+    }
+    
+    
+  fileUpload = async() => {
+      try {
+        const fd = new FormData();
+        fd.append('photo',this.state.selectedFile,"photo");
+        let res = await axios.post("http://127.0.0.1:3002/upload", fd)
+        this.setState({post_image: res.data.filename},()=>console.log("Ya setee el post_image:", this.state.post_image))
+        console.log("La respuesta de res", res)
+        return res.data.filename;          
+      } catch (error) {
+          return "algun error";
+      }
+
+        // axios.post("http://127.0.0.1:3002/upload", fd)
+        // .then(response => {
+        // this.setState({ post_image: response.data.filename });
+        // console.log("Ya se guardo la foto", response.data.filename)
+        // return response.data.filename;
+        // })
+        // .catch(error => {
+        // console.log("Ha ocurrido un error");;
+        // return "";
+        // });
+    
+  }
+
 
     render(){
         if (this.state.loading){return <h1>Loading...</h1>}
@@ -159,7 +200,7 @@ class CreatePost extends React.Component{
                                     <option value="Ciudad3">Ciudad3</option>
                                 </select>
                                 <br />
-                                <input id="post_image" name="post_image" type="file" value={this.state.post_image_ooo} onChange={this.handleInput} />
+                                <input id="post_image" name="post_image" type="file" value={this.state.post_image_ooo} onChange={this.fileSelectedHandler} />
                                 <label for="post_image">
                                     <span class="material-icons">cloud_upload</span>
                                     <p>Upload a Photo</p>
