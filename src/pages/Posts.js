@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './Posts.css';
 
 class Posts extends React.Component{
     constructor(){
@@ -71,18 +72,33 @@ class Posts extends React.Component{
         if (this.state.error || !this.state.post) return (<h1>No se puede desplegar informacion de este post</h1>); 
         
         return (
-             
-            <section>
-  
-               {typeOfUser==="provider"?<button onClick={this.deletePost} >Borrar Post</button>:""} 
-               {typeOfUser==="provider"?<button onClick={this.updatePost} >Editar Post</button>:""} 
-             <h1>{this.state.post.title} </h1>
-             <h2>{this.state.post.description} </h2>
-             <p>City:{this.state.post.city} </p>
-             <p>State:{this.state.post.state} </p>
-             <p>Country:{this.state.post.country} </p>
-            </section>
-            
+            <div class="postmainContainer">
+                <div class="postContainer">
+                    <h1>Your Service:</h1>
+                    <div class="post-img">
+                        <img src={this.state.post.post_image} alt="" class="post-pic" />
+                    </div>
+                    <div class="post-details">
+                        <h1>{this.state.post.title}</h1>
+                        <p>{this.state.post.description}</p>
+                        <div class="postrow">
+                            <ul>
+                                <li><strong>Category:</strong> {this.state.post.category}</li>
+                                <li><strong>Subcategory:</strong> {this.state.post.subcategory}</li>
+                            </ul>
+                            <ul>
+                                <li><strong>Country:</strong> {this.state.post.country}</li>
+                                <li><strong>State:</strong> {this.state.post.state}</li>
+                                <li><strong>City:</strong> {this.state.post.city}</li>
+                            </ul>
+                        </div>
+                        <div class="postButtons">
+                            {typeOfUser==="provider"?<button class="post-btn"onClick={this.deletePost} >Delete</button>:""} 
+                            {typeOfUser==="provider"?<button class="post-btn"onClick={this.updatePost} >Edit </button>:""} 
+                        </div>
+                    </div>
+                </div>
+            </div>
         )
     }
 } 

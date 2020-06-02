@@ -60,6 +60,8 @@ class CreatePost extends React.Component{
         if (this.state.postId){
             method= "PUT";
             url=process.env.REACT_APP_SERVER_URL+"/posts/"+this.state.postId;
+            console.log("Entre en el put del handle submit");
+            console.log(url);
         } else{
             method= "POST";
             url= process.env.REACT_APP_SERVER_URL+"/posts/";
@@ -129,17 +131,17 @@ class CreatePost extends React.Component{
                                 <br />
                                 <select name="category" value={this.state.category} onChange={this.handleSelect} id="category">
                                     <option value="">Pick your Service:</option>
-                                    <option value="music">Music</option>
-                                    <option value="photography">Photography</option>
-                                    <option value="videography">Videography</option>
+                                    <option value="Music">Music</option>
+                                    <option value="Photography">Photography</option>
+                                    <option value="Videography">Videography</option>
                                 </select>
                                 <br />
                                 <select name="subcategory" id="subcategory" value={this.state.subcategory} onChange={this.handleSelect}>
                                     <option value="">Select a Subcategory</option>
-                                    <option value="wedding">Wedding</option>
-                                    <option value="aerial">Aerial</option>
-                                    <option value="food">Food</option>
-                                    <option value="models">Models</option>
+                                    <option value="Wedding">Wedding</option>
+                                    <option value="Aerial">Aerial</option>
+                                    <option value="Food">Food</option>
+                                    <option value="Models">Models</option>
                                 </select>
                                 <br />
                                 <select onChange={this.handleInput} value={this.state.country} name="country" class="countries" id="countryId">
