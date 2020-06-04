@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './List.css';
 
 class List extends React.Component{
     constructor(){
@@ -48,17 +49,17 @@ class List extends React.Component{
                 <section>
                     <h1>We have the following artists:</h1>
                     {posts && posts.length > 0 && posts.map(post => (
-                        <div class="container">
-                            <div class="photographer-img">
-                                <img src={post.post_image.indexOf("http") >=0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" class="photographer-pic" />
+                        <div class="listsContainer">
+                            <div class="listsImage">
+                                <img src={post.post_image.indexOf("http") >=0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" class="listsPic" />
                             </div>
-                            <div class="photographer-details">
+                            <div class="listsDetails">
                                 <header>
                                     <h1>{post.title} </h1>
                                     <p>{post.description} </p>
                                 </header>
                             </div>
-                            <button type="button" value={post._id} onClick={this.handleSubmit} class="profile-btn">View Post</button>
+                            <button type="button" value={post._id} onClick={this.handleSubmit} class="listProfileBtn">View Post</button>
                         </div>
                     ))}
                 </section>

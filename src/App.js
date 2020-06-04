@@ -12,6 +12,7 @@ import SignOut from './pages/SignOut';
 import SignUp from './pages/SignUp';
 import CreatePost from './pages/CreatePost';
 import ListProviderPosts from './pages/ListProviderPosts';
+import ListCategory from './pages/ListCategory';
 
 class App extends React.Component {
   constructor(){
@@ -55,6 +56,7 @@ class App extends React.Component {
             <UserRoute exact path="/models"  component={List}></UserRoute>
             <UserRoute exact path="/aerial"  component={List}></UserRoute>
             <UserRoute exact path="/wedding"  component={List}></UserRoute>
+            <UserRoute exact path="/category/:id"  component={ListCategory}></UserRoute>
             <ProviderRoute exact path="/posts/create"  component={CreatePost}></ProviderRoute>
             <ProviderRoute exact path="/posts/create/:id"  component={CreatePost}></ProviderRoute>
             <GenericRoute exact path="/posts/:id"  component={Posts}></GenericRoute>

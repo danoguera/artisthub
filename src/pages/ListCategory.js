@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import './ListProvider.css';
-class ListProviderPosts extends React.Component{
+import './ListCategory.css';
+
+class ListCategory extends React.Component{
     constructor(){
         super();
         this.state = {
@@ -12,8 +13,9 @@ class ListProviderPosts extends React.Component{
     } 
 
     componentDidMount(){
-        axios({
-            url: process.env.REACT_APP_SERVER_URL + "/posts/",
+        const category = this.props.location.pathname
+         axios({
+            url: process.env.REACT_APP_SERVER_URL + "/posts" + category,
             method: "GET",
             headers: { "Authorization": localStorage.getItem("token") } 
 
@@ -37,7 +39,7 @@ class ListProviderPosts extends React.Component{
 
     render(){
 
-        if (this.state.loading){return <h1>Loading...</h1>};
+        if (this.state.loading){return <h1>Loading ...</h1>};
         if (this.state.error){return <h1>Something went wrong..</h1>}  
 
         let posts = this.state.posts;
@@ -47,17 +49,17 @@ class ListProviderPosts extends React.Component{
                 <section>
                     <h1>We have the following artists:</h1>
                     {posts && posts.length > 0 && posts.map(post => (
-                        <div class="listContainer">
-                            <div class="listImage">
-                                <img src={post.post_image.indexOf("http") >= 0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" class="listPic" />
+                        <div class="listsContainer">
+                            <div class="listsImage">
+                                <img src={post.post_image.indexOf("http") >=0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" class="listsPic" />
                             </div>
-                            <div class="listDetails">
+                            <div class="listsDetails">
                                 <header>
                                     <h1>{post.title} </h1>
                                     <p>{post.description} </p>
                                 </header>
                             </div>
-                            <button type="button" value={post._id} onClick={this.handleSubmit} class="btnProfile">View Post</button>
+                            <button type="button" value={post._id} onClick={this.handleSubmit} class="listProfileBtn">View Post</button>
                         </div>
                     ))}
                 </section>
@@ -67,4 +69,4 @@ class ListProviderPosts extends React.Component{
 } 
 
 
-export default ListProviderPosts;
+export default ListCategory;

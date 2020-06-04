@@ -8,9 +8,14 @@ class Login extends React.Component{
             email: "",
             password: "",
             result: "",
-            isProvider: true
+            isProvider: false
         } 
     } 
+
+    componentDidMount() {
+        localStorage.removeItem("token");
+        localStorage.removeItem("typeOfUser");
+    }
 
     handleSubmit = (event) => {
         event.preventDefault();

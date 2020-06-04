@@ -30,6 +30,7 @@
      line-height: 230px;
      text-shadow: 2px 2px 8px #111;
      font-weight: 900;
+     cursor: pointer;
    }
    
    .service2{

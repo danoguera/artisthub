@@ -60,8 +60,6 @@ class CreatePost extends React.Component{
         if (this.state.postId){
             method= "PUT";
             url=process.env.REACT_APP_SERVER_URL+"/posts/"+this.state.postId;
-            console.log("Entre en el put del handle submit");
-            console.log(url);
         } else{
             method= "POST";
             url= process.env.REACT_APP_SERVER_URL+"/posts/";
@@ -120,8 +118,8 @@ class CreatePost extends React.Component{
         return (
             <main>
                 <section>
-                    <div class="service">
-                        <div class="boxService">
+                    <div className="service">
+                        <div className="boxService">
                             <h1>Create your service</h1>
                             <h2>Please fill up the form</h2>
                             <form onSubmit={this.handleSubmit} >
@@ -144,7 +142,7 @@ class CreatePost extends React.Component{
                                     <option value="Models">Models</option>
                                 </select>
                                 <br />
-                                <select onChange={this.handleInput} value={this.state.country} name="country" class="countries" id="countryId">
+                                <select onChange={this.handleInput} value={this.state.country} name="country" className="countries" id="countryId">
                                     <option value="">Select your country:</option>
                                     <option value="Australia">Australia </option>
                                     <option value="Colombia">Colombia</option>
@@ -153,7 +151,7 @@ class CreatePost extends React.Component{
                                     <option value="Cyprus">Cyprus</option>
                                 </select>
                                 <br />
-                                <select onChange={this.handleInput} value={this.state.state} name="state" class="states" id="stateId">
+                                <select onChange={this.handleInput} value={this.state.state} name="state" className="states" id="stateId">
                                     <option value="">Select your state:</option>
                                     <option value="Victoria">Victoria</option>
                                     <option value="Atlantico">Atlantico</option>
@@ -162,7 +160,7 @@ class CreatePost extends React.Component{
                                     <option value="Santander">Santander</option>
                                 </select>
                                 <br />
-                                <select onChange={this.handleInput} value={this.state.city} name="city" class="cities" id="cityId">
+                                <select onChange={this.handleInput} value={this.state.city} name="city" className="cities" id="cityId">
                                     <option value="" >Select your city:</option>
                                     <option value="Bogota">Bogota</option>
                                     <option value="Barranquilla">Curramba</option>
@@ -173,12 +171,12 @@ class CreatePost extends React.Component{
                                 </select>
                                 <br />
                                 <input id="post_image" name="post_image" type="file" value={this.state.post_image_ooo} onChange={this.fileSelectedHandler} />
-                                <label for="post_image">
-                                    <span class="material-icons">cloud_upload</span>
+                                <label htmlFor="post_image">
+                                    <span className="material-icons">cloud_upload</span>
                                     <p>Upload a Photo</p>
                                 </label>
                                 <br />
-                                <input type="submit" class="submit-btn" onSubmit={this.handleSubmit} className="submit-btn" value={this.state.postId ? "Update" : "Submit"} />
+                                <input type="submit" className="submit-btn" onSubmit={this.handleSubmit} className="submit-btn" value={this.state.postId ? "Update" : "Submit"} />
                             </form>
                         </div>
                     </div>

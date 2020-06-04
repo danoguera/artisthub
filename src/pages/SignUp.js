@@ -20,9 +20,11 @@ class SignUp extends React.Component{
             state: "",
             city: "",
             birthDate: new Date("January 1, 2001"),
-            notEqual: false,        
+            notEqual: false,
+            typeOfUser: "",        
         } 
     } 
+
 
     componentDidMount(){
         const postId = this.props.match.params.id;
@@ -45,6 +47,7 @@ class SignUp extends React.Component{
                 .finally(() => this.setState({ loading: false })); 
         } 
     } 
+    */
 
     handleSelect = (event) => {
         this.setState({
@@ -54,18 +57,16 @@ class SignUp extends React.Component{
 
     handleSubmit = (event) => {
         event.preventDefault();
-        let method, url;
-        if (this.state.postId){
-            method= "PUT";
-            url=process.env.REACT_APP_SERVER_URL+"/posts/"+this.state.postId;
+        let url;
+        if (this.state.typeOfUser==="provider"){
+            url= process.env.REACT_APP_SERVER_URL+"/provider/signup";
         } else{
-            method= "POST";
             url= process.env.REACT_APP_SERVER_URL+"/users/signup";
         } 
         const {name, lastname, password, state, country, city, email, username, documentId, birthDate} = this.state; 
         axios({
             url,
-            method,
+            method: "POST",
             headers: {  },
             data: {
                 name,
@@ -118,24 +119,30 @@ class SignUp extends React.Component{
         return (
             <main>
                 <section>
-                    <div class="service">
-                        <div class="boxService">
+                    <div class="signup">
+                        <div class="boxSignup">
                             <h1>Create your profile</h1>
                             <h2>Please fill up the form</h2>
                             <form onSubmit={this.handleSubmit} >
-                            <input id="name" placeholder="Type your name" name="name" type="text" className="inputBoxService" value={this.state.name} onChange={this.handleInput} />
+                                <select onChange={this.handleInput} value={this.state.typeOfUser} name="typeOfUser" className="inputBoxSignup" id="typeOfUser">
+                                    <option value="">Select your type of user:</option>
+                                    <option value="user">User</option>
+                                    <option value="provider">Provider</option>
+                                </select>
                                 <br/>
-                                <input id="lastname" placeholder="Type your lastname" name="lastname" type="text" className="inputBoxService" value={this.state.lastname} onChange={this.handleInput} />
+                                <input id="name" placeholder="Type your name" name="name" type="text" className="inputBoxSignup" value={this.state.name} onChange={this.handleInput} />
                                 <br/>
-                                <input id="password" placeholder="Type your password" name="password" type="password" className="inputBoxService" value={this.state.password} onChange={this.handleInput} />
+                                <input id="lastname" placeholder="Type your lastname" name="lastname" type="text" className="inputBoxSignup" value={this.state.lastname} onChange={this.handleInput} />
                                 <br/>
-                                <input id="verifyPassword" placeholder="Verify your password" name="verifyPassword" type="password" className="inputBoxService" value={this.state.verifyPassword} onChange={this.handleInput} />
+                                <input id="password" placeholder="Type your password" name="password" type="password" className="inputBoxSignup" value={this.state.password} onChange={this.handleInput} />
                                 <br/>
-                                <input id="email" placeholder="Type your email" name="email" type="text" className="inputBoxService" value={this.state.email} onChange={this.handleInput} />
+                                <input id="verifyPassword" placeholder="Verify your password" name="verifyPassword" type="password" className="inputBoxSignup" value={this.state.verifyPassword} onChange={this.handleInput} />
                                 <br/>
-                                <input id="username" placeholder="Type your username" name="username" type="text" className="inputBoxService" value={this.state.username} onChange={this.handleInput} />
+                                <input id="email" placeholder="Type your email" name="email" type="text" className="inputBoxSignup" value={this.state.email} onChange={this.handleInput} />
                                 <br/>
-                                <input id="documentId" placeholder="Type your Document ID" name="documentId" type="text" className="inputBoxService" value={this.state.documentId} onChange={this.handleInput} />
+                                <input id="username" placeholder="Type your username" name="username" type="text" className="inputBoxSignup" value={this.state.username} onChange={this.handleInput} />
+                                <br/>
+                                <input id="documentId" placeholder="Type your Document ID" name="documentId" type="text" className="inputBoxSignup" value={this.state.documentId} onChange={this.handleInput} />
                                 <p>Birthdate: <DatePicker selected={this.state.birthDate} onChange={this.handleChangeDate} dateFormattttt="yyyy/MM/dd" /></p>
                                 <select onChange={this.handleInput} value={this.state.country} name="country" class="countries" id="countryId">
                                     <option value="">Select Country</option>

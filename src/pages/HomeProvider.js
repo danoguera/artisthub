@@ -25,10 +25,10 @@ class HomeProvider extends React.Component {
 
                     <div className="services">
                         <div className="service1">
-                        <h3><Link to="/posts/create">Crear post</Link></h3>
+                        <h3><Link style={{ textDecoration: 'none' }} to="/posts/create">Crear post</Link></h3>
                         </div>
                         <div className="service2">
-                            <h3><Link to="/list">Listar...</Link></h3>
+                            <h3><Link style={{ textDecoration: 'none' }} to="/list">Listar...</Link></h3>
                         </div>
                         <div className="service3">
                             <h3>Who knows...</h3>
