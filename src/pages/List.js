@@ -13,9 +13,10 @@ class List extends React.Component{
     } 
 
     componentDidMount(){
-        const subcategory = this.props.match.path;
+        const subcategory = this.props.match.params.subcategory;
+        const category=this.props.match.params.category;
         axios({
-            url: process.env.REACT_APP_SERVER_URL + "/posts/subcategory" + subcategory,
+            url: process.env.REACT_APP_SERVER_URL + "/posts/" + category + "/" + subcategory,
             method: "GET",
             headers: { "Authorization": localStorage.getItem("token") } 
 
@@ -46,20 +47,20 @@ class List extends React.Component{
 
         return (
             <React.Fragment>
-                <section>
-                    <h1>We have the following artists:</h1>
+                <section className="showSection">
+                    <h2>We have the following artists:</h2>
                     {posts && posts.length > 0 && posts.map(post => (
-                        <div class="listsContainer">
-                            <div class="listsImage">
-                                <img src={post.post_image.indexOf("http") >=0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" class="listsPic" />
+                        <div class="showContainer">
+                            <div class="showImage">
+                                <img src={post.post_image.indexOf("http") >=0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" class="showPic" />
                             </div>
-                            <div class="listsDetails">
-                                <header>
+                            <div className="showDetails">
+                                {/* <header className="showHeader"> */}
                                     <h1>{post.title} </h1>
                                     <p>{post.description} </p>
-                                </header>
+                                {/* </header> */}
                             </div>
-                            <button type="button" value={post._id} onClick={this.handleSubmit} class="listProfileBtn">View Post</button>
+                            <button type="button" value={post._id} onClick={this.handleSubmit} class="showProfileBtn">View Post</button>
                         </div>
                     ))}
                 </section>

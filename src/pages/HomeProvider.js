@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import '../assets/styles/Home.css'
+import './HomeProvider.css'
 
 
 class HomeProvider extends React.Component {
@@ -20,18 +20,15 @@ class HomeProvider extends React.Component {
         return (
 
             <React.Fragment>
-                <div className="mainContainer">
+                <div className="mainProvContainer">
                     <h1>Tell us which service you want to offer:</h1>
 
-                    <div className="services">
-                        <div className="service1">
-                        <h3><Link style={{ textDecoration: 'none' }} to="/posts/create">Crear post</Link></h3>
+                    <div className="provServices">
+                        <div className="provService1">
+                            <h3><Link to="/posts/create" className="text-link" >Create Service</Link></h3>
                         </div>
-                        <div className="service2">
-                            <h3><Link style={{ textDecoration: 'none' }} to="/list">Listar...</Link></h3>
-                        </div>
-                        <div className="service3">
-                            <h3>Who knows...</h3>
+                        <div className="provService2">
+                            <h3><Link to="/list" className="text-link">List Services</Link></h3>
                         </div>
                     </div>
                 </div>

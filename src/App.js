@@ -55,7 +55,8 @@ class App extends React.Component {
             <UserRoute exact path="/food"  component={List}></UserRoute>
             <UserRoute exact path="/models"  component={List}></UserRoute>
             <UserRoute exact path="/aerial"  component={List}></UserRoute>
-            <UserRoute exact path="/wedding"  component={List}></UserRoute>
+            <UserRoute exact path="/Wedding"  component={List}></UserRoute>
+            <UserRoute exact path="/catsub/:category/:subcategory"  component={List}></UserRoute>
             <UserRoute exact path="/category/:id"  component={ListCategory}></UserRoute>
             <ProviderRoute exact path="/posts/create"  component={CreatePost}></ProviderRoute>
             <ProviderRoute exact path="/posts/create/:id"  component={CreatePost}></ProviderRoute>

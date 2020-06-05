@@ -37,6 +37,10 @@ class Posts extends React.Component{
           .finally( () => this.setState({loading: false})); 
     } 
 
+    goBack = () => {
+        this.props.history.goBack();
+    }
+
     updatePost = () => {
         const postId = this.props.match.params.id;
         this.props.history.push("/posts/create/"+postId);
@@ -68,7 +72,7 @@ class Posts extends React.Component{
 
     render(){
         const typeOfUser=localStorage.getItem("typeOfUser");
-        if (this.state.loading) return (<h1>Loading...</h1>); 
+        if (this.state.loading) return (<div class="postContainer"><h1>Loading...</h1></div>); 
         if (this.state.error || !this.state.post) return (<h1>No se puede desplegar informacion de este post</h1>); 
         
         return (
@@ -95,6 +99,7 @@ class Posts extends React.Component{
                         <div class="postButtons">
                             {typeOfUser==="provider"?<button class="post-btn"onClick={this.deletePost} >Delete</button>:""} 
                             {typeOfUser==="provider"?<button class="post-btn"onClick={this.updatePost} >Edit </button>:""} 
+                            <button class="post-btn"onClick={this.goBack} >Back </button>
                         </div>
                     </div>
                 </div>

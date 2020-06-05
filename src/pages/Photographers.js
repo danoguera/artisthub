@@ -1,5 +1,6 @@
 import React from 'react';
 import { postPhotoTypes } from '../components/Data';
+import './Photographers.css';
 
 class Photographers extends React.Component{
     constructor(){
@@ -10,27 +11,27 @@ class Photographers extends React.Component{
     } 
 
     handleSubmit = (event) => {
-        this.props.history.push("/"+event.target.value)
+        this.props.history.push("/catsub/Photography/"+event.target.value)
     } 
 
     render(){
         let posts = postPhotoTypes;
         return (
             <React.Fragment>
-                <section>
-                    <h1>Choose the type of photography you'd like:</h1>
+                <section className="photographerSection">
+                    <h2>Choose the type of photography you'd like:</h2>
                     {posts && posts.length > 0 && posts.map(post => (
-                        <div key={post.id} className="container">
-                            <div className="photographer-img">
-                                <img src={post.post_image} alt="" className="photographer-pic" />
+                        <div key={post.id} className="photoContainer">
+                            <div className="photographerImg">
+                                <img src={post.post_image} alt="" className="photographerPic" />
                             </div>
-                            <div className="photographer-details">
-                                <header>
+                            <div className="photographerDetails">
+                                <header className="photographerHeader">
                                     <h1>{post.title} </h1>
                                     <p>{post.description} </p>
                                 </header>
                             </div>
-                            <button type="button" value={post.route} onClick={this.handleSubmit}  className="profile-btn">View Photographers</button> 
+                            <button type="button" value={post.route}  onClick={this.handleSubmit}  className="profileButton">View Photographers</button> 
                         </div>
                     ))} 
                 </section>

@@ -1,4 +1,4 @@
-.showSection h1 {
+.photographerSection h1 {
     font-size: 40px;
     color: white;
     text-align: left;
@@ -6,20 +6,20 @@
 }
 
 
-.showSection h2 {
+.photographerSection h2 {
     font-size: 40px;
     color: white;
     text-align: center;
     text-shadow: 2px 2px 8px #000;
 }
 
-.showImg {
+.photographerImg {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.showPic {
+.photographerPic {
     max-width: 180px;
     position: relative;
     left: 0;
@@ -28,18 +28,17 @@
     border-radius: 6px;
 }
 
-.showDetails {
-    /* padding: 0 20px 0 20px; */
-    /* border-radius: 5px; */
+.photographerDetails {
+    padding: 0 20px 0 20px;
+    border-radius: 5px;
     color: #FFFFFF;
-    text-align: left;
 }
 
-.showDetails p {
+.photographerDetails p {
     font-size: 20px;
 }
 
-.showContainer {
+.photoContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,17 +46,17 @@
     padding: 20px;
     border-radius: 5px;
     padding-bottom: 30px;
-    /* margin-top: 15px; */
-    margin: 0 15px 15px 15px;
+    margin: 0 10px 10px 10px;
 }
 
-.showDetails h1 {
+.photographerHeader h1 {
     text-align: center;
+    margin: 0;
 }
 
-.showProfileBtn {
+.profileButton {
     width: 220px;
-    height: 40px;
+    height: 60px;
     background: #F44336;
     border: none;
     border-radius: 2px;
@@ -65,11 +64,13 @@
     cursor: pointer;
     transition: 0.2s;
     font-size: 20px;
+    margin-top: 100px;
+    line-height: 20px;
 }
 
 @media only screen and (min-width: 1000px) {
  
-    .showContainer {
+    .photoContainer {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -79,16 +80,17 @@
         margin-left: 20px;
         margin-right: 20px;
     }
-    .showProfileBtn {
+    .profileButton {
         margin-top: 20px;
     }
-    .showDetails {
+    .photographerDetails {
         padding: 0 20px 20px 20px;
         border-radius: 5px;
         color: #FFFFFF;
         width: 90%;
     }
-    .showDetails h1 {
+
+    .photographerHeader h1 {
         text-align: left;
     }
 }

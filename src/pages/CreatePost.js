@@ -153,21 +153,21 @@ class CreatePost extends React.Component{
                                 <br />
                                 <select onChange={this.handleInput} value={this.state.state} name="state" className="states" id="stateId">
                                     <option value="">Select your state:</option>
-                                    <option value="Victoria">Victoria</option>
+                                    <option value="Antioquia">Antioquia</option>
                                     <option value="Atlantico">Atlantico</option>
                                     <option value="Bogota">Bogota</option>
-                                    <option value="Antioquia">Antioquia</option>
                                     <option value="Santander">Santander</option>
+                                    <option value="Victoria">Victoria</option>
                                 </select>
                                 <br />
                                 <select onChange={this.handleInput} value={this.state.city} name="city" className="cities" id="cityId">
                                     <option value="" >Select your city:</option>
                                     <option value="Bogota">Bogota</option>
                                     <option value="Barranquilla">Curramba</option>
+                                    <option value="Bucaramanga">Bucaramanga</option>
+                                    <option value="Cali">Cali</option>
+                                    <option value="Medellin">Medellin</option>
                                     <option value="Melbourne">Melbourne</option>
-                                    <option value="Ciudad1">Ciudad1</option>
-                                    <option value="Ciudad2">Ciudad2</option>
-                                    <option value="Ciudad3">Ciudad3</option>
                                 </select>
                                 <br />
                                 <input id="post_image" name="post_image" type="file" value={this.state.post_image_ooo} onChange={this.fileSelectedHandler} />

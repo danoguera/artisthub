@@ -26,29 +26,6 @@ class SignUp extends React.Component{
     } 
 
 
-    componentDidMount(){
-        const postId = this.props.match.params.id;
-        if (postId){
-            axios({
-                url: process.env.REACT_APP_SERVER_URL+"/posts/"+postId,
-                method: "GET",
-                headers: { "Authorization": localStorage.getItem("token") },
-                })
-                .then(response => {
-                    const {description, title, country, city, state, category, subcategory, post_image} = response.data; 
-                    this.setState({
-                        description, title, country, city, state, 
-                        category, subcategory, post_image, postId: postId
-                    });
-                })
-                .catch(error =>{
-                     this.setState({ error: error})
-                 })
-                .finally(() => this.setState({ loading: false })); 
-        } 
-    } 
-    */
-
     handleSelect = (event) => {
         this.setState({
            [event.target.name]: event.target.value 
@@ -159,8 +136,11 @@ class SignUp extends React.Component{
                                 <br/>
                                 <select onChange={this.handleInput} value={this.state.city} name="city" class="cities" id="cityId">
                                     <option value="">Select your city:</option>
+                                    <option value="Barranquilla">Barranquilla</option>
                                     <option value="Bogota">Bogota</option>
-                                    <option value="Barranquilla">Curramba</option>
+                                    <option value="Bucaramanga">Bucaramanga</option>
+                                    <option value="Cali">Cali</option>
+                                    <option value="Medellin">Medellin</option>
                                     <option value="Melbourne">Melbourne</option>
                                 </select>
                                 <br/>

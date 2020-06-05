@@ -38,10 +38,10 @@ class Home extends React.Component {
                             <h3>Photo</h3>
                         </div>
                         <div  className="service2">
-                            <h3><Link to="/category/video" className="text-link" >Video</Link></h3>
+                            <h3><Link to="/category/Videography" className="text-link" >Video</Link></h3>
                         </div>      
                         <div className="service3">
-                            <h3><Link to="/category/music" className="text-link" >Music</Link></h3>
+                            <h3><Link to="/category/Music" className="text-link" >Music</Link></h3>
                         </div>
                     </div>
                 </div>

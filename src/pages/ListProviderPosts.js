@@ -41,21 +41,20 @@ class ListProviderPosts extends React.Component{
         if (this.state.error){return <h1>Something went wrong..</h1>}  
 
         let posts = this.state.posts;
+        if (posts.length===0){return <section><h1>You have no posts yet</h1></section>};
 
         return (
             <React.Fragment>
                 <section>
-                    <h1>We have the following artists:</h1>
+                <h1>You have the following posts:</h1>                    
                     {posts && posts.length > 0 && posts.map(post => (
                         <div class="listContainer">
                             <div class="listImage">
                                 <img src={post.post_image.indexOf("http") >= 0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" class="listPic" />
                             </div>
                             <div class="listDetails">
-                                <header>
                                     <h1>{post.title} </h1>
                                     <p>{post.description} </p>
-                                </header>
                             </div>
                             <button type="button" value={post._id} onClick={this.handleSubmit} class="btnProfile">View Post</button>
                         </div>
