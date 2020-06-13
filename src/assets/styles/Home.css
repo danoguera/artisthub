@@ -4,6 +4,11 @@
     color: white;
   }
 
+  .mainContainer{
+    padding-top: 20px;
+  }
+  
+
 .services{
     width: 100%;
    }
@@ -90,6 +95,8 @@
       .service3 h3{
         line-height: 200px;
       }
+
+
     
 
    }

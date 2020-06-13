@@ -1,6 +1,6 @@
 .signup {
   position: absolute;
-  margin-top: 70px;
+  margin-top: 40px;
   text-align: center;
   color: #FFFFFF;
   line-height: 20px;
@@ -13,10 +13,11 @@
 .boxSignup{
   background-color: #E8E8E8;
   width: 450px;
-  height: 620px;
+  height: 780px;
   /* margin: auto; */
   background: rgba(0,0,0,0.4);
   padding: 10px;
+  margin-bottom: 10px;
   border-radius: 8px;
 }
 
@@ -33,8 +34,8 @@
   display: block;
   background: rgba(240,240,240,0.05);
   color: #FFFFFF;
-  line-height: 14px;
-  padding: 0.6em;
+  /* padding: 0.6em; */
+  padding:10px;
   width: 89%;
   max-width: 100%;
   margin: 0 auto;
@@ -43,9 +44,15 @@
   -webkit-appearance: none;
   appearance: none;
   line-height: 10px;
-  
   border: 1px solid rgb(199, 190, 190);
+  background-image: url('../assets/images/down-arrow.png');
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%;
+  background-size: .90em;
+
 }
+
+
 
 .boxSignup select option {
   color: black;
@@ -76,6 +83,32 @@ input[type="file"]{
 ::placeholder{
   color: #FFFFFF;
 }
+
+.boxSignup p {
+  display: flex;
+  justify-content: left;
+  /* text-align: right; */
+  background: rgba(240,240,240,0.05);
+  border: 1px solid rgb(199, 190, 190);
+  border-radius: 6px;
+  padding: 5px 0;
+  margin: auto;
+  width: 86.5%;
+  padding-left: 10px;
+  font-weight: lighter;
+  font-size:15px;
+  color: #f0f0f0;
+}
+
+.date{
+  color: #FFFFFF;
+  font-size: 14px;
+  background: rgba(240,240,240, 0);
+  border: transparent;
+  border-radius: 6px;
+  padding-left: 10px;
+}
+
 
 .inputBoxSignup{
   display: block;
@@ -133,7 +166,7 @@ input[type="file"]{
   .boxSignup{
     background-color: #E8E8E8;
     width: 1000px;
-    height: 730px;
+    height: 770px;
     /* margin: auto; */
     background: rgba(0,0,0,0.4);
     padding: 10px;
@@ -159,6 +192,24 @@ input[type="file"]{
     line-height: 10px;
     margin: 0 auto;
     border: 1px solid rgb(199, 190, 190);
+    background-image: url('../assets/images/down-arrow.png');
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%;
+    background-size: .90em;
+  
+  }
+
+  .boxSignup p{
+    display: flex;
+    justify-content: left;
+    /* text-align: right; */
+    background: rgba(240,240,240,0.05);
+    border: 1px solid rgb(199, 190, 190);
+    border-radius: 6px;
+    padding: 5px 0;
+    margin: auto;
+    width: 88%;
+    padding-left: 10px;
   }
 
   input[type="file"]{
@@ -169,7 +220,7 @@ input[type="file"]{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(240,240,240,0.05);
+    background: rgba(126, 82, 82, 0.05);
     border: 1px solid rgb(199, 190, 190);
     border-radius: 6px;
     line-height: 2px;
@@ -219,4 +270,5 @@ input[type="file"]{
     border-radius: 5px;
   }
 
+  
 }

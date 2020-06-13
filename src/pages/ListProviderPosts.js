@@ -45,7 +45,7 @@ class ListProviderPosts extends React.Component{
 
         return (
             <React.Fragment>
-                <section>
+                <section className="listProvider"> 
                 <h1>You have the following posts:</h1>                    
                     {posts && posts.length > 0 && posts.map(post => (
                         <div class="listContainer">

@@ -120,7 +120,9 @@ class SignUp extends React.Component{
                                 <input id="username" placeholder="Type your username" name="username" type="text" className="inputBoxSignup" value={this.state.username} onChange={this.handleInput} />
                                 <br/>
                                 <input id="documentId" placeholder="Type your Document ID" name="documentId" type="text" className="inputBoxSignup" value={this.state.documentId} onChange={this.handleInput} />
-                                <p>Birthdate: <DatePicker selected={this.state.birthDate} onChange={this.handleChangeDate} dateFormattttt="yyyy/MM/dd" /></p>
+                                <br />
+                                <p>Birthdate: <DatePicker selected={this.state.birthDate} onChange={this.handleChangeDate} dateFormattttt="yyyy/MM/dd" className="date" /></p>
+                                <br />
                                 <select onChange={this.handleInput} value={this.state.country} name="country" class="countries" id="countryId">
                                     <option value="">Select Country</option>
                                     <option value="Australia">Australia </option>

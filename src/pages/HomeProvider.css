@@ -2,6 +2,11 @@
     font-size: 40px;
     text-align: center;
     color: white;
+    padding-top: 70px;;
+  }
+
+  .mainProvContainer {
+    padding-top: 70px;;
   }
 
 .provServices{
