@@ -55,10 +55,8 @@ class List extends React.Component{
                                 <img src={post.post_image.indexOf("http") >=0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" class="showPic" />
                             </div>
                             <div className="showDetails">
-                                {/* <header className="showHeader"> */}
                                     <h1>{post.title} </h1>
                                     <p>{post.description} </p>
-                                {/* </header> */}
                             </div>
                             <button type="button" value={post._id} onClick={this.handleSubmit} class="showProfileBtn">View Post</button>
                         </div>
