@@ -82,7 +82,8 @@ class CreatePost extends React.Component{
         axios({
             url,
             method,
-            headers: { "Authorization": localStorage.getItem("token") },
+            headers: { "Authorization": localStorage.getItem("token"),
+                        'Content-Type': 'multipart/form-data' },
             data: fd,
             })
             .then(response => {
