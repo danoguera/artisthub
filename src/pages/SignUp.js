@@ -26,12 +26,6 @@ class SignUp extends React.Component{
     } 
 
 
-    handleSelect = (event) => {
-        this.setState({
-           [event.target.name]: event.target.value 
-        })
-    } 
-
     handleSubmit = (event) => {
         event.preventDefault();
         let url;
@@ -76,13 +70,13 @@ class SignUp extends React.Component{
         this.setState({
            [event.target.name]: event.target.value, 
         }) 
-        if (event.target.name==="verifyPassword"){
-            if (event.target.value !== this.state.password) {
-                this.setState({ notEqual: true });
-            }else {
-                this.setState({ notEqual: false });
-            }
-        }
+        // if (event.target.name==="verifyPassword"){
+        //     if (event.target.value !== this.state.password) {
+        //         this.setState({ notEqual: true });
+        //     }else {
+        //         this.setState({ notEqual: false });
+        //     }
+        // }
     } 
     handleChangeDate = date => {
         this.setState({
@@ -96,18 +90,18 @@ class SignUp extends React.Component{
         return (
             <main>
                 <section>
-                    <div class="signup">
-                        <div class="boxSignup">
+                    <div className="signup">
+                        <div className="boxSignup">
                             <h1>Create your profile</h1>
                             <h2>Please fill up the form</h2>
                             <form onSubmit={this.handleSubmit} >
-                                <select onChange={this.handleInput} value={this.state.typeOfUser} name="typeOfUser" className="inputBoxSignup" id="typeOfUser">
+                                <select onChange={this.handleInput} data-testid="typeOfUser" value={this.state.typeOfUser} name="typeOfUser" className="inputBoxSignup" id="typeOfUser">
                                     <option value="">Select your type of user:</option>
                                     <option value="user">User</option>
                                     <option value="provider">Provider</option>
                                 </select>
                                 <br/>
-                                <input id="name" placeholder="Type your name" name="name" type="text" className="inputBoxSignup" value={this.state.name} onChange={this.handleInput} />
+                                <input id="name" data-testid="name" placeholder="Type your name" name="name" type="text" className="inputBoxSignup" value={this.state.name} onChange={this.handleInput} />
                                 <br/>
                                 <input id="lastname" placeholder="Type your lastname" name="lastname" type="text" className="inputBoxSignup" value={this.state.lastname} onChange={this.handleInput} />
                                 <br/>
@@ -123,20 +117,20 @@ class SignUp extends React.Component{
                                 <br />
                                 <p>Birthdate: <DatePicker selected={this.state.birthDate} onChange={this.handleChangeDate} dateFormattttt="yyyy/MM/dd" className="date" /></p>
                                 <br />
-                                <select onChange={this.handleInput} value={this.state.country} name="country" class="countries" id="countryId">
+                                <select onChange={this.handleInput} value={this.state.country} name="country" className="countries" id="countryId">
                                     <option value="">Select Country</option>
                                     <option value="Australia">Australia </option>
                                     <option value="Colombia">Colombia</option>
                                 </select>
                                 <br/>
-                                <select onChange={this.handleInput} value={this.state.state} name="state" class="states" id="stateId">
+                                <select onChange={this.handleInput} value={this.state.state} name="state" className="states" id="stateId">
                                     <option value="">Select State</option>
                                     <option value="Victoria">Victoria</option>
                                     <option value="Atlantico">Atlantico</option>
                                     <option value="Bogota">Bogota</option>
                                 </select>
                                 <br/>
-                                <select onChange={this.handleInput} value={this.state.city} name="city" class="cities" id="cityId">
+                                <select onChange={this.handleInput} value={this.state.city} name="city" className="cities" id="cityId">
                                     <option value="">Select your city:</option>
                                     <option value="Barranquilla">Barranquilla</option>
                                     <option value="Bogota">Bogota</option>
@@ -146,7 +140,7 @@ class SignUp extends React.Component{
                                     <option value="Melbourne">Melbourne</option>
                                 </select>
                                 <br/>
-                                <input type="submit" onSubmit={this.handleSubmit} className="submit-btn" value={this.state.postId ? "Update" : "Submit"} />
+                                <input type="submit" data-testid="submit-btn" onSubmit={this.handleSubmit} className="submit-btn" value={this.state.postId ? "Update" : "Submit"} />
                                 <br/>
                             </form>
                         </div>

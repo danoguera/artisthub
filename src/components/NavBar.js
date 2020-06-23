@@ -8,18 +8,18 @@ const navBar = (props) =>{
     
 
   return (
-    <header class="header">
+    <header className="header">
       <a href={localStorage.getItem("typeOfUser")==="provider" ? "/homeProvider" :"/home"} className="logo">aH</a>
-      <input class="menuButton" type="checkbox" id="menuButton" />
-      <label class="menuIcon" for="menuButton"><span class="navIcon"></span></label>
-        <ul class="menu">
-        <div class="left">
+      <input className="menuButton" type="checkbox" id="menuButton" />
+      <label className="menuIcon" htmlFor="menuButton"><span className="navIcon"></span></label>
+        <ul className="menu">
+        <div className="left">
         
           <li><a href="/aboutus">About Us</a></li>
           <li><a href="/services">Services</a></li>
           <li><a href="/contact">Contact</a></li>
         </div>
-        <div class="right">
+        <div className="right">
         { !token ?  (
           <React.Fragment>    
           <Link to='/login'><li>Sign In</li></Link>

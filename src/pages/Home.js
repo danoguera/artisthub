@@ -10,19 +10,18 @@ class Home extends React.Component {
         }
     }
 
-
-    handleCategory = (event) => {
-        if (String(event.target).indexOf("Video")>0){
-            this.props.history.push("/category/music");   
-        }
-        if (String(event.target).indexOf("Video")>0){
-            this.props.history.push("/category/videography");   
-        }
+    // Esto ya se puede borrar?
+    // handleCategory = (event) => {
+    //     if (String(event.target).indexOf("Video")>0){
+    //         this.props.history.push("/category/music");   
+    //     }
+    //     if (String(event.target).indexOf("Video")>0){
+    //         this.props.history.push("/category/videography");   
+    //     }
   
-    } 
+    // } 
 
     handlePhoto = (event) => {
-
         this.props.history.push("/photographers");
     }
 
@@ -34,7 +33,7 @@ class Home extends React.Component {
                     <h1>Tell us which service you are looking for:</h1>
 
                     <div className="services">
-                        <div  onClick={ this.handlePhoto } className="service1">
+                        <div  onClick={ this.handlePhoto } data-testid="photography-view" className="service1">
                             <h3>Photo</h3>
                         </div>
                         <div  className="service2">

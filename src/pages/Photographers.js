@@ -21,17 +21,17 @@ class Photographers extends React.Component{
                 <section className="photographerSection">
                     <h2>Choose the type of photography you'd like:</h2>
                     {posts && posts.length > 0 && posts.map(post => (
-                        <div key={post.id} className="photoContainer">
+                        <div key={post.id} className="photoContainer" data-testid="photo-category">
                             <div className="photographerImg">
                                 <img src={post.post_image} alt="" className="photographerPic" />
                             </div>
-                            <div className="photographerDetails">
+                            <div className="photographerDetails" >
                                 <header className="photographerHeader">
                                     <h1>{post.title} </h1>
                                     <p>{post.description} </p>
                                 </header>
                             </div>
-                            <button type="button" value={post.route}  onClick={this.handleSubmit}  className="profileButton">View Photographers</button> 
+                            <button type="button" value={post.route} data-testid="view-category" onClick={this.handleSubmit}  className="profileButton">View Photographers</button> 
                         </div>
                     ))} 
                 </section>

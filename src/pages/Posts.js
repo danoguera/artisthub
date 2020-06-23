@@ -72,19 +72,19 @@ class Posts extends React.Component{
 
     render(){
         const typeOfUser=localStorage.getItem("typeOfUser");
-        if (this.state.loading) return (<div class="postContainer"><h1>Loading...</h1></div>); 
+        if (this.state.loading) return (<div className="postContainer"><h1>Loading...</h1></div>); 
         if (this.state.error || !this.state.post) return (<h1>No se puede desplegar informacion de este post</h1>); 
         
         return (
-                <div class="postContainer">
+                <div className="postContainer">
                     <h1>Your Service:</h1>
-                    <div class="post-img">
-                        <img src={this.state.post.post_image} alt="" class="post-pic" />
+                    <div className="post-img">
+                        <img src={this.state.post.post_image} alt="" className="post-pic" />
                     </div>
-                    <div class="post-details">
+                    <div className="post-details" data-testid="post">
                         <h1>{this.state.post.title}</h1>
                         <p>{this.state.post.description}</p>
-                        <div class="postrow">
+                        <div className="postrow">
                             <ul>
                                 <li><strong>Category:</strong> {this.state.post.category}</li>
                                 <li><strong>Subcategory:</strong> {this.state.post.subcategory}</li>
@@ -96,10 +96,10 @@ class Posts extends React.Component{
                             </ul>
                         </div>
   
-                        <div class="postButtons">
-                            {typeOfUser==="provider"?<button class="post-btn"onClick={this.deletePost} >Delete</button>:""} 
-                            {typeOfUser==="provider"?<button class="post-btn"onClick={this.updatePost} >Edit </button>:""} 
-                            <button class="post-btn"onClick={this.goBack} >Back </button>
+                        <div className="postButtons">
+                            {typeOfUser==="provider"?<button className="post-btn" data-testid="post-delete" onClick={this.deletePost} >Delete</button>:""} 
+                            {typeOfUser==="provider"?<button className="post-btn" data-testid="post-edit" onClick={this.updatePost}  >Edit </button>:""} 
+                            <button className="post-btn"onClick={this.goBack} >Back </button>
                         </div>
                     </div>
                 </div>

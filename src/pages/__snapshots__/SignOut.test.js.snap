@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignOut should render correctly 1`] = `
+<main>
+  <div
+    class="login"
+  >
+    <h1>
+      Gracias por tu visita.
+    </h1>
+  </div>
+</main>
+`;

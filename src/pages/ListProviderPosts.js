@@ -48,15 +48,15 @@ class ListProviderPosts extends React.Component{
                 <section className="listProvider"> 
                 <h1>You have the following posts:</h1>                    
                     {posts && posts.length > 0 && posts.map(post => (
-                        <div class="listContainer">
-                            <div class="listImage">
-                                <img src={post.post_image.indexOf("http") >= 0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" class="listPic" />
+                        <div className="listContainer" data-testid="provider-post" key={post._id}>
+                            <div className="listImage">
+                                <img src={post.post_image.indexOf("http") >= 0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" className="listPic" />
                             </div>
-                            <div class="listDetails">
+                            <div className="listDetails">
                                     <h1>{post.title} </h1>
                                     <p>{post.description} </p>
                             </div>
-                            <button type="button" value={post._id} onClick={this.handleSubmit} class="btnProfile">View Post</button>
+                            <button type="button" data-testid="post-view" value={post._id} onClick={this.handleSubmit} className="btnProfile">View Post</button>
                         </div>
                     ))}
                 </section>

@@ -23,6 +23,7 @@ class CreatePost extends React.Component{
 
     componentDidMount(){
         const postId = this.props.match.params.id;
+        
         if (postId){
             axios({
                 url: process.env.REACT_APP_SERVER_URL+"/posts/"+postId,
@@ -47,11 +48,11 @@ class CreatePost extends React.Component{
         this.setState({
            [event.target.name]: event.target.value 
         })
-        if (event.target.value==="photography"){
-            this.setState({
-                subcategoryList:["aerial","model","food","wedding"]  
-            })
-         } 
+        // if (event.target.value==="photography"){
+        //     this.setState({
+        //         subcategoryList:["aerial","model","food","wedding"]  
+        //     })
+        //  } 
     } 
 
     handleSubmit = async(event) => {
@@ -124,11 +125,11 @@ class CreatePost extends React.Component{
                             <h1>Create your service</h1>
                             <h2>Please fill up the form</h2>
                             <form onSubmit={this.handleSubmit} >
-                                <input id="title" name="title" type="text" className="inputBoxService" placeholder="Enter your service title" value={this.state.title} onChange={this.handleInput} />
+                                <input id="title" name="title" type="text" className="inputBoxService" data-testid="post-title" placeholder="Enter your service title" value={this.state.title} onChange={this.handleInput} />
                                 <br />
                                 <textarea id="description" name="description" className="textBox" placeholder="Enter your service description" value={this.state.description} onChange={this.handleInput} />
                                 <br />
-                                <select name="category" value={this.state.category} onChange={this.handleSelect} id="category">
+                                <select name="category" data-testid="category" value={this.state.category} onChange={this.handleSelect} id="category">
                                     <option value="">Pick your Service:</option>
                                     <option value="Music">Music</option>
                                     <option value="Photography">Photography</option>
@@ -171,13 +172,13 @@ class CreatePost extends React.Component{
                                     <option value="Melbourne">Melbourne</option>
                                 </select>
                                 <br />
-                                <input id="post_image" name="post_image" type="file" value={this.state.post_image_ooo} onChange={this.fileSelectedHandler} />
+                                <input id="post_image" name="post_image" data-testid="post_image" type="file" value={this.state.post_image_ooo} onChange={this.fileSelectedHandler} />
                                 <label htmlFor="post_image">
                                     <span className="material-icons">cloud_upload</span>
                                     <p>Upload a Photo</p>
                                 </label>
                                 <br />
-                                <input type="submit" className="submit-btn" onSubmit={this.handleSubmit} className="submit-btn" value={this.state.postId ? "Update" : "Submit"} />
+                                <input type="submit" className="submit-btn" data-testid="submit-btn" onSubmit={this.handleSubmit} className="submit-btn" value={this.state.postId ? "Update" : "Submit"} />
                             </form>
                         </div>
                     </div>

@@ -11,11 +11,6 @@ class HomeProvider extends React.Component {
         }
     }
 
-    handlePhoto = (event) => {
-
-        this.props.history.push("/photographers");
-    }
-
     render() {
         return (
 

@@ -49,17 +49,17 @@ class ListCategory extends React.Component{
                 <section>
                     <h1>We have the following artists:</h1>
                     {posts && posts.length > 0 && posts.map(post => (
-                        <div class="listsContainer">
-                            <div class="listsImage">
-                                <img src={post.post_image.indexOf("http") >=0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" class="listsPic" />
+                        <div className="listsContainer"  data-testid="post" key={post._id}>
+                            <div className="listsImage">
+                                <img src={post.post_image.indexOf("http") >=0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" className="listsPic" />
                             </div>
-                            <div class="listsDetails">
+                            <div className="listsDetails">
                                 <header>
                                     <h1>{post.title} </h1>
                                     <p>{post.description} </p>
                                 </header>
                             </div>
-                            <button type="button" value={post._id} onClick={this.handleSubmit} class="listProfileBtn">View Post</button>
+                            <button type="button" data-testid="post-view" value={post._id} onClick={this.handleSubmit} className="listProfileBtn">View Post</button>
                         </div>
                     ))}
                 </section>

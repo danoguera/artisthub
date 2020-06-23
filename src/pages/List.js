@@ -50,15 +50,15 @@ class List extends React.Component{
                 <section className="showSection">
                     <h2>We have the following artists:</h2>
                     {posts && posts.length > 0 && posts.map(post => (
-                        <div class="showContainer">
-                            <div class="showImage">
-                                <img src={post.post_image.indexOf("http") >=0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" class="showPic" />
+                        <div className="showContainer" data-testid="post" key={post._id}>
+                            <div className="showImage">
+                                <img src={post.post_image.indexOf("http") >=0 ? post.post_image : require(`../assets/images/${post.post_image}`)} alt="" className="showPic" />
                             </div>
                             <div className="showDetails">
                                     <h1>{post.title} </h1>
                                     <p>{post.description} </p>
                             </div>
-                            <button type="button" value={post._id} onClick={this.handleSubmit} class="showProfileBtn">View Post</button>
+                            <button type="button" value={post._id} data-testid="post-view" onClick={this.handleSubmit} className="showProfileBtn">View Post</button>
                         </div>
                     ))}
                 </section>
