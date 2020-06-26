@@ -1,6 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { Router } from 'react-router-dom';
+import { render, fireEvent, cleanup } from '@testing-library/react';
+import { Router, MemoryRouter, Route} from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import puppeteer from 'puppeteer';
 import App from './App';
