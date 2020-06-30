@@ -13,7 +13,7 @@ section h1 {
     padding: 20px;
     border-radius: 5px;
     padding-bottom: 30px;
-    margin: 0 10px;
+    margin: 15px 10px;
 }
 
 .listsImage {
@@ -23,7 +23,7 @@ section h1 {
 }
 
 .listsPic {
-    max-width: 180px;
+    max-width: 250px;
     position: relative;
     left: 0;
     margin: 10px 0;
@@ -37,17 +37,21 @@ section h1 {
     color: #FFFFFF;
 }
 
+.listsDetails p{
+    font-size: 20px;
+ }
+
 .listProfileBtn {
-    width: 220px;
-    height: 60px;
+    width: 200px;
+    height: 50px;
     background: #F44336;
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
     color: #FFF;
     cursor: pointer;
     transition: 0.2s;
     font-size: 20px;
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -57,7 +61,7 @@ section h1 {
         align-items: center;
         background: rgba(0, 0, 0, 0.4);
         border-radius: 5px;
-        margin-top: 15px;
+        margin: 15px;
     }
 
     .listsDetails {
@@ -67,8 +71,14 @@ section h1 {
         width: 90%;
     }
 
+    .listsDetails h1{
+        text-align: left;
+        padding-top: 30px;
+    }
+
+
+
     .listProfileBtn {
         margin-top: 0;
     }
-
 }

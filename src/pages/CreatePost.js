@@ -122,22 +122,21 @@ class CreatePost extends React.Component{
                 <section>
                     <div className="service">
                         <div className="boxService">
-                            <h1>Create your service</h1>
-                            <h2>Please fill up the form</h2>
+                            <h1>Create your Service</h1>
                             <form onSubmit={this.handleSubmit} >
                                 <input id="title" name="title" type="text" className="inputBoxService" data-testid="post-title" placeholder="Enter your service title" value={this.state.title} onChange={this.handleInput} />
                                 <br />
                                 <textarea id="description" name="description" className="textBox" placeholder="Enter your service description" value={this.state.description} onChange={this.handleInput} />
                                 <br />
                                 <select name="category" data-testid="category" value={this.state.category} onChange={this.handleSelect} id="category">
-                                    <option value="">Pick your Service:</option>
+                                    <option value="">Pick your service</option>
                                     <option value="Music">Music</option>
                                     <option value="Photography">Photography</option>
                                     <option value="Videography">Videography</option>
                                 </select>
                                 <br />
                                 <select name="subcategory" id="subcategory" value={this.state.subcategory} onChange={this.handleSelect}>
-                                    <option value="">Select a Subcategory</option>
+                                    <option value="">Select a subcategory</option>
                                     <option value="Wedding">Wedding</option>
                                     <option value="Aerial">Aerial</option>
                                     <option value="Food">Food</option>
@@ -145,7 +144,7 @@ class CreatePost extends React.Component{
                                 </select>
                                 <br />
                                 <select onChange={this.handleInput} value={this.state.country} name="country" className="countries" id="countryId">
-                                    <option value="">Select your country:</option>
+                                    <option value="">Select your country</option>
                                     <option value="Australia">Australia </option>
                                     <option value="Colombia">Colombia</option>
                                     <option value="Congo">Congo</option>
@@ -154,21 +153,21 @@ class CreatePost extends React.Component{
                                 </select>
                                 <br />
                                 <select onChange={this.handleInput} value={this.state.state} name="state" className="states" id="stateId">
-                                    <option value="">Select your state:</option>
+                                    <option value="">Select your state</option>
                                     <option value="Antioquia">Antioquia</option>
-                                    <option value="Atlantico">Atlantico</option>
-                                    <option value="Bogota">Bogota</option>
+                                    <option value="Atlantico">Atlántico</option>
+                                    <option value="Bogota">Bogotá, DC</option>
                                     <option value="Santander">Santander</option>
                                     <option value="Victoria">Victoria</option>
                                 </select>
                                 <br />
                                 <select onChange={this.handleInput} value={this.state.city} name="city" className="cities" id="cityId">
-                                    <option value="" >Select your city:</option>
-                                    <option value="Bogota">Bogota</option>
-                                    <option value="Barranquilla">Curramba</option>
+                                    <option value="" >Select your city</option>
+                                    <option value="Bogota">Bogotá</option>
+                                    <option value="Barranquilla">Barranquilla</option>
                                     <option value="Bucaramanga">Bucaramanga</option>
                                     <option value="Cali">Cali</option>
-                                    <option value="Medellin">Medellin</option>
+                                    <option value="Medellin">Medellín</option>
                                     <option value="Melbourne">Melbourne</option>
                                 </select>
                                 <br />

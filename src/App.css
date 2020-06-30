@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url("./assets/images/logo.jpg");
+    background: linear-gradient(-180deg, rgba(27,27,27,0.8) 20%, rgba(27,25,25,0.5) 35%, rgba(150,150,150,0.3) 85%), url("./assets/images/logo.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

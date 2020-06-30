@@ -90,12 +90,12 @@ class SignUp extends React.Component{
         return (
             <main>
                 <section>
-                    <div className="signup">
+                    <div className="signupFrame">
                         <div className="boxSignup">
                             <h1>Create your profile</h1>
                             <h2>Please fill up the form</h2>
                             <form onSubmit={this.handleSubmit} >
-                                <select onChange={this.handleInput} data-testid="typeOfUser" value={this.state.typeOfUser} name="typeOfUser" className="inputBoxSignup" id="typeOfUser">
+                                <select onChange={this.handleInput} data-testid="typeOfUser" value={this.state.typeOfUser} name="typeOfUser" className="select" id="typeOfUser">
                                     <option value="">Select your type of user:</option>
                                     <option value="user">User</option>
                                     <option value="provider">Provider</option>

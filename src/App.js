@@ -13,6 +13,11 @@ import SignUp from './pages/SignUp';
 import CreatePost from './pages/CreatePost';
 import ListProviderPosts from './pages/ListProviderPosts';
 import ListCategory from './pages/ListCategory';
+import Payment from './pages/Payment';
+import PaymentResponse from './pages/PaymentResponse';
+import Forgot from './pages/Forgot';
+import changePassword from './pages/changePassword';
+
 
 class App extends React.Component {
   constructor(){
@@ -63,6 +68,10 @@ class App extends React.Component {
             <GenericRoute exact path="/posts/:id"  component={Posts}></GenericRoute>
             <Route exact path="/signup" component={SignUp}></Route>
             <Route exact path="/signout" render={(props) => <SignOut {...props}  onUpdate={this.updateTokenStatus}/> }/>
+            <ProviderRoute exact path="/paymenttest" component={Payment}></ProviderRoute>
+            <ProviderRoute exact path="/paymentresponse" component={PaymentResponse}></ProviderRoute>
+            <Route exact path="/forgot" component={Forgot}></Route>
+            <Route exact path="/changepassword" component={changePassword}></Route>
             <Route exact path="*"  component={Login}></Route>
           </Switch>
         </Router>

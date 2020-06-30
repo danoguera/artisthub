@@ -19,7 +19,7 @@ class Photographers extends React.Component{
         return (
             <React.Fragment>
                 <section className="photographerSection">
-                    <h2>Choose the type of photography you'd like:</h2>
+                    <h2>Choose the type of photography you would like:</h2>
                     {posts && posts.length > 0 && posts.map(post => (
                         <div key={post.id} className="photoContainer" data-testid="photo-category">
                             <div className="photographerImg">

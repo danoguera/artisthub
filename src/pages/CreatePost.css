@@ -1,19 +1,15 @@
 .service{
-    position: absolute;
-    margin-top: 70px;
-    text-align: center;
-    color: #FFFFFF;
-    line-height: 20px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    height: 500px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  text-align: center;
+  color: #FFFFFF;
   }
   
   .boxService{
     background-color: #E8E8E8;
     width: 450px;
-    height: 620px;
+    height: 700px;
     /* margin: auto; */
     background: rgba(0,0,0,0.4);
     padding: 10px;
@@ -22,6 +18,7 @@
   
   .boxService h1{
     font-size: 30px;
+    padding-bottom: 10px;
   }
   
   .boxService h2{
@@ -29,17 +26,31 @@
   }
   
   .boxService select{
+    font-size: 15px;
     display: block;
     background: rgba(240,240,240,0.05);
     color: #FFFFFF;
-    padding: 5px;
+    padding: 10px 15px;
     width: 89%;
-    border-radius: 6px;
-    line-height: 10px;
-    margin: 0 auto;
+    max-width: 100%;
+    /* margin: 20px; */
+    border-radius: 5px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    line-height: 20px;
     border: 1px solid rgb(199, 190, 190);
+    background-image: url('../assets/images/down-arrow.png');
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%;
+    background-size: .90em;
+    margin: 0 auto;
   }
   
+  .boxService select option {
+    color: black;
+  }
+
   input[type="file"]{
     display: none;
   }
@@ -50,30 +61,32 @@
     align-items: center;
     background: rgba(240,240,240,0.05);
     border: 1px solid rgb(199, 190, 190);
-    border-radius: 6px;
+    border-radius: 5px;
     line-height: 2px;
     /* margin-top: 10px; */
-    margin-left: 17px;
+    margin: 0 auto;
     width: 89%;
+    padding: 3px 0;
   }
   
   .boxService label p{
     margin-left: 6px;
-    font-size: 14px;
+    font-size: 15px;
   }
   
   ::placeholder{
     color: #FFFFFF;
+    font-size: 15px;
   }
   
   .inputBoxService{
     display: block;
     box-sizing: border-box;
     margin: auto;
-    padding: 10px;
+    padding: 15px 15px;
     background: rgba(240,240,240,0.05);
     width: 89%;
-    height: 32px;
+    height: 35px;
     border: 1px solid rgb(199, 190, 190);
     outline: none;
     font-size: 15px;
@@ -86,11 +99,11 @@
     display: block;
     box-sizing: border-box;
     margin: auto;
-    padding: 10px;
+    padding: 10px 15px;
     background: transparent;
-    width: 90%;
+    width: 89%;
     height: 92px;
-    border: 1px solid #FFF;
+    border: 1px solid rgb(199, 190, 190);
     outline: none;
     font-size: 15px;
     transition: 0.2s;
@@ -113,6 +126,18 @@
   }
   
   @media only screen and (min-width: 1000px){
+
+    .service{
+      position: absolute;
+      margin-top: 70px;
+      text-align: center;
+      color: #FFFFFF;
+      line-height: 20px;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      height: 500px;
+    }
   
     .service{
       height: 400px;
@@ -122,11 +147,12 @@
     .boxService{
       background-color: #E8E8E8;
       width: 1000px;
-      height: 620px;
+      height: 680px;
       /* margin: auto; */
       background: rgba(0,0,0,0.4);
       padding: 10px;
       border-radius: 8px;
+      padding: 20px 0;
     }
     
     .boxService h1{
@@ -136,18 +162,7 @@
     .boxService h2{
       font-size: 20px;
     }
-    
-    .boxService select{
-      display: block;
-      background: rgba(240,240,240,0.05);
-      color: #FFFFFF;
-      padding: 5px;
-      width: 89%;
-      border-radius: 6px;
-      line-height: 10px;
-      margin: 0 auto;
-      border: 1px solid rgb(199, 190, 190);
-    }
+
 
     input[type="file"]{
       display: none;
@@ -173,7 +188,7 @@
     ::placeholder{
       color: #FFFFFF;
     }
-    
+/*     
     .inputBoxService{
       display: block;
       box-sizing: border-box;
@@ -188,9 +203,9 @@
       transition: 0.2s;
       color: #FFFFFF;
       border-radius: 5px;
-    }
+    } */
     
-    .textBox{
+    /* .textBox{
       display: block;
       box-sizing: border-box;
       margin: auto;
@@ -198,13 +213,13 @@
       background: transparent;
       width: 89%;
       height: 92px;
-      border: 1px solid #FFF;
+      border: 1px solid rgb(199, 190, 190);
       outline: none;
       font-size: 15px;
       transition: 0.2s;
       color: #FFF;
       font-weight: 400;
       border-radius: 5px;
-    }
+    } */
   
   }

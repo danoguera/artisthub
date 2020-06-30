@@ -77,7 +77,7 @@ class Posts extends React.Component{
         
         return (
                 <div className="postContainer">
-                    <h1>Your Service:</h1>
+                    <h1>Your Service</h1>
                     <div className="post-img">
                         <img src={this.state.post.post_image} alt="" className="post-pic" />
                     </div>
@@ -99,7 +99,8 @@ class Posts extends React.Component{
                         <div className="postButtons">
                             {typeOfUser==="provider"?<button className="post-btn" data-testid="post-delete" onClick={this.deletePost} >Delete</button>:""} 
                             {typeOfUser==="provider"?<button className="post-btn" data-testid="post-edit" onClick={this.updatePost}  >Edit </button>:""} 
-                            <button className="post-btn"onClick={this.goBack} >Back </button>
+                            <button className="post-btn" onClick={this.goBack} >Hire Me!</button>
+                            <button className="post-btn" onClick={this.goBack} >Back </button>
                         </div>
                     </div>
                 </div>

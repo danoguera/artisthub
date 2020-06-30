@@ -23,7 +23,7 @@ class SignOut extends React.Component{
 
         return (
             <main>
-            <div className="login"><h1>Gracias por tu visita.</h1>
+            <div className="login"><h1>Thanks for your visit!</h1>
             </div>
             </main>
         )
