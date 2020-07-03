@@ -48,11 +48,12 @@ class PaymentResponse extends React.Component{
                 this.setState({message:"El pago fue exitoso"});
                 const { endDate } = await updateSubscriptionDate(ref_payco);
                 //OJO Preguntar si ese async/await esta bien
+                localStorage.setItem("active","true");
                 this.setState({
                     endDate,
                 });
             }else if (response.data.data.x_response==="Pendiente"){
-                this.setState({message:"El pago està pendiente"});
+                this.setState({message:"El pago está pendiente"});
             }else if (response.data.data.x_response==="Rechazada"){
                 this.setState({message:"El pago ha sido rechazado"});
             }

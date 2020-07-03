@@ -68,7 +68,7 @@ class App extends React.Component {
             <GenericRoute exact path="/posts/:id"  component={Posts}></GenericRoute>
             <Route exact path="/signup" component={SignUp}></Route>
             <Route exact path="/signout" render={(props) => <SignOut {...props}  onUpdate={this.updateTokenStatus}/> }/>
-            <ProviderRoute exact path="/paymenttest" component={Payment}></ProviderRoute>
+            <ProviderRoute exact path="/payment" component={Payment}></ProviderRoute>
             <ProviderRoute exact path="/paymentresponse" component={PaymentResponse}></ProviderRoute>
             <Route exact path="/forgot" component={Forgot}></Route>
             <Route exact path="/changepassword" component={changePassword}></Route>
@@ -106,12 +106,14 @@ function UserRoute(props){
 } 
 
 function ProviderRoute(props){
+  console.log("Estoy dentro de Provider Route");
   const token = localStorage.getItem("token");
   const typeOfUser = localStorage.getItem("typeOfUser");
   if (!token){
     return <Redirect to="/login"></Redirect>
   } 
   if ( token && typeOfUser==="provider" ){
+    console.log("Estoy 2ndo if de PR");
     return (<Route {...props} ></Route>);    
   } 
   return <Redirect to="/home"></Redirect>

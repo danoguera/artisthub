@@ -14,6 +14,7 @@ class SignOut extends React.Component{
     componentDidMount(){
         localStorage.removeItem("token");
         localStorage.removeItem("typeOfUser");
+        localStorage.removeItem("active");
         this.props.onUpdate("");
     } 
 

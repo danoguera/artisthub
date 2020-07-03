@@ -5,7 +5,7 @@ import { Link} from 'react-router-dom';
 const navBar = (props) =>{ 
 
   const token = props.token;
-    
+  const active = localStorage.getItem("active");  
 
   return (
     <header className="header">
@@ -27,6 +27,7 @@ const navBar = (props) =>{
         </React.Fragment> 
           ) : (
             <React.Fragment>
+              {active==="false" ? <Link to='/payment'> <li>Pay Subscription</li></Link> : null }
              <Link to='/signout'> <li>Sign Out</li></Link>
             </React.Fragment> 
             ) 

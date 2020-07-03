@@ -31,12 +31,23 @@ class Login extends React.Component{
             }
             })
             .then(response => {
-                localStorage.setItem("token",response.data);
-                this.props.onUpdate(response.data);
+               // localStorage.setItem("token",response.data);
+               // this.props.onUpdate(response.data);
+               
                 if (this.state.isProvider){
+                    localStorage.setItem("token",response.data.token);
+                    localStorage.setItem("active", response.data.active);
                     localStorage.setItem("typeOfUser","provider");
-                    this.props.history.push("/homeProvider"); 
+                    this.props.onUpdate(response.data.token);
+                    console.log(localStorage.getItem("active"), typeof localStorage.getItem("active"))
+                    if (localStorage.getItem("active")==="true"){
+                        this.props.history.push("/homeProvider"); 
+                    }else {
+                        this.props.history.push("/payment");
+                    }
                 } else{  
+                    localStorage.setItem("token",response.data);
+                    this.props.onUpdate(response.data);
                     localStorage.setItem("typeOfUser","user");
                     this.props.history.push("/home");  
                 }

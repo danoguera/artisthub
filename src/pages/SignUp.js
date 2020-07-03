@@ -53,12 +53,10 @@ class SignUp extends React.Component{
             }
             })
             .then(response => {
-                alert("Tu usuario ha sido registrado")
-                this.props.history.push("/home");  
+                this.props.history.push("/login");
             })
             .catch(error =>{
-                alert("No es posible crear/modificar el usuario. " + error.response.data.message);
-                 this.setState({ 
+                this.setState({ 
                     error: error.response.data.message,
                 })
              })
@@ -70,14 +68,8 @@ class SignUp extends React.Component{
         this.setState({
            [event.target.name]: event.target.value, 
         }) 
-        // if (event.target.name==="verifyPassword"){
-        //     if (event.target.value !== this.state.password) {
-        //         this.setState({ notEqual: true });
-        //     }else {
-        //         this.setState({ notEqual: false });
-        //     }
-        // }
     } 
+
     handleChangeDate = date => {
         this.setState({
           birthDate: date
@@ -141,6 +133,7 @@ class SignUp extends React.Component{
                                 </select>
                                 <br/>
                                 <input type="submit" data-testid="submit-btn" onSubmit={this.handleSubmit} className="submit-btn" value={this.state.postId ? "Update" : "Submit"} />
+                                {this.state.error ? <div className="warning">The user couldn't be created.</div> : null}
                                 <br/>
                             </form>
                         </div>

@@ -42,7 +42,7 @@ class Payment extends React.Component{
           });
 
           handler.open({
-            external: 'true',
+            external: 'false',
             amount: '50000',
             tax: '0',
             tax_base: '0',

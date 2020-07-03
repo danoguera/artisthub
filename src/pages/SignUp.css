@@ -157,6 +157,11 @@ input[type="file"]{
   font-size: 20px;
 }
 
+.warning {
+  color: #FFF;
+  padding-top: 10px;
+}
+
 @media only screen and (min-width: 1000px){
 
   .signup {
