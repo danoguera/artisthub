@@ -43,7 +43,6 @@ class changePassword extends React.Component{
             }
             })
             .then(response => {
-                console.log(response);
                 alert("Tu clave ha sido cambiada")
                 this.props.history.push("/login");  
             })

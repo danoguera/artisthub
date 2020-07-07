@@ -18,6 +18,7 @@ class CreatePost extends React.Component{
             title: "", 
             description: "", 
             post_image: "",
+            fare: "",
         } 
     } 
 
@@ -31,10 +32,10 @@ class CreatePost extends React.Component{
                 headers: { "Authorization": localStorage.getItem("token") },
                 })
                 .then(response => {
-                    const {description, title, country, city, state, category, subcategory, post_image} = response.data; 
+                    const {description, title, country, city, state, category, subcategory, post_image, fare} = response.data; 
                     this.setState({
                         description, title, country, city, state, 
-                        category, subcategory, post_image, postId: postId
+                        category, subcategory, post_image, fare, postId: postId
                     });
                 })
                 .catch(error =>{
@@ -48,11 +49,6 @@ class CreatePost extends React.Component{
         this.setState({
            [event.target.name]: event.target.value 
         })
-        // if (event.target.value==="photography"){
-        //     this.setState({
-        //         subcategoryList:["aerial","model","food","wedding"]  
-        //     })
-        //  } 
     } 
 
     handleSubmit = async(event) => {
@@ -70,7 +66,7 @@ class CreatePost extends React.Component{
             fd.append('photo',this.state.selectedFile,"photo");
         }
         
-        const {title, description, city, state, country, subcategory, category} = this.state; 
+        const {title, description, city, state, country, subcategory, category, fare} = this.state; 
  
         fd.set("title", title);
         fd.set("description", description);
@@ -79,6 +75,7 @@ class CreatePost extends React.Component{
         fd.set("country", country);
         fd.set("subcategory", subcategory);
         fd.set("category", category);
+        fd.set("fare", fare);
 
         axios({
             url,
@@ -129,14 +126,14 @@ class CreatePost extends React.Component{
                                 <textarea id="description" name="description" className="textBox" placeholder="Enter your service description" value={this.state.description} onChange={this.handleInput} />
                                 <br />
                                 <select name="category" data-testid="category" value={this.state.category} onChange={this.handleSelect} id="category">
-                                    <option value="">Pick your service</option>
+                                    <option value="">Pick your Service</option>
                                     <option value="Music">Music</option>
                                     <option value="Photography">Photography</option>
                                     <option value="Videography">Videography</option>
                                 </select>
                                 <br />
                                 <select name="subcategory" id="subcategory" value={this.state.subcategory} onChange={this.handleSelect}>
-                                    <option value="">Select a subcategory</option>
+                                    <option value="">Select a Sub-category</option>
                                     <option value="Wedding">Wedding</option>
                                     <option value="Aerial">Aerial</option>
                                     <option value="Food">Food</option>
@@ -144,7 +141,7 @@ class CreatePost extends React.Component{
                                 </select>
                                 <br />
                                 <select onChange={this.handleInput} value={this.state.country} name="country" className="countries" id="countryId">
-                                    <option value="">Select your country</option>
+                                    <option value="">Select your Country</option>
                                     <option value="Australia">Australia </option>
                                     <option value="Colombia">Colombia</option>
                                     <option value="Congo">Congo</option>
@@ -153,7 +150,7 @@ class CreatePost extends React.Component{
                                 </select>
                                 <br />
                                 <select onChange={this.handleInput} value={this.state.state} name="state" className="states" id="stateId">
-                                    <option value="">Select your state</option>
+                                    <option value="">Select your State</option>
                                     <option value="Antioquia">Antioquia</option>
                                     <option value="Atlantico">Atlántico</option>
                                     <option value="Bogota">Bogotá, DC</option>
@@ -162,7 +159,7 @@ class CreatePost extends React.Component{
                                 </select>
                                 <br />
                                 <select onChange={this.handleInput} value={this.state.city} name="city" className="cities" id="cityId">
-                                    <option value="" >Select your city</option>
+                                    <option value="" >Select your City</option>
                                     <option value="Bogota">Bogotá</option>
                                     <option value="Barranquilla">Barranquilla</option>
                                     <option value="Bucaramanga">Bucaramanga</option>
@@ -177,7 +174,8 @@ class CreatePost extends React.Component{
                                     <p>Upload a Photo</p>
                                 </label>
                                 <br />
-                                <input type="submit" className="submit-btn" data-testid="submit-btn" onSubmit={this.handleSubmit} className="submit-btn" value={this.state.postId ? "Update" : "Submit"} />
+                                <input id="fare" name="fare" type="text" className="inputBoxService" data-testid="fare" placeholder="Enter your hourly fare" value={this.state.fare} onChange={this.handleInput} />
+                                <input type="submit" className="submit-btn" data-testid="submit-btn" onSubmit={this.handleSubmit} value={this.state.postId ? "Update" : "Submit"} />
                             </form>
                         </div>
                     </div>

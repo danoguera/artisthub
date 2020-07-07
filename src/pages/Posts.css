@@ -7,12 +7,15 @@
     /* position: absolute; */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-self: center;
+    justify-content: center;
+    width: auto;
     background: rgba(0,0,0,0.4);
+    /* background: yellow; */
     padding: 20px 0;
     border-radius: 5px;
     padding-bottom: 20px;
-    margin: 30px 10px 15px 10px;
+    margin: 0 15px 15px;
   }
   
   .postContainer h1{
@@ -118,17 +121,19 @@
 
     .postContainer{
       width: 1250px;
-      margin: 0 auto;
-      margin-bottom: 15px;
+      margin: 50px auto;
+      /* margin-bottom: 15px; */
+      /* margin-right: 15px; */
     }
     
     .post-details{
       width: 1200px;
+      margin: 0 auto;
     }
   
     .post-details p{
       /* float: center; */
-      margin: 10px 20px;
+      margin: 10px 50px;
       font-size: 20px;
       padding: 0 10px;
     }
@@ -156,7 +161,7 @@
     } */
 
     .post-btn{
-      width: 100px;
+      width: 140px;
       font-size: 20px;
     }
 

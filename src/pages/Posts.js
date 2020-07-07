@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './Posts.css';
+import { Link } from 'react-router-dom';
 
 class Posts extends React.Component{
     constructor(){
@@ -56,12 +57,12 @@ class Posts extends React.Component{
 
         })
           .then(response =>{
-              alert("El post ha sido borrado")
+              alert("The post has been deleted")
                //this.setState( response.data)
                this.props.history.push("/homeProvider");
            } )
           .catch(error =>{
-            alert("No se pudo borrar el post")
+            alert("The post couldn't be deleted")
             //this.props.history.push("/login");
             //this.setState({error: true} )
            
@@ -77,7 +78,7 @@ class Posts extends React.Component{
         
         return (
                 <div className="postContainer">
-                    <h1>Your Service</h1>
+                    {typeOfUser==="provider"?<h1>Your Service</h1>:<h1>Service Description</h1>}
                     <div className="post-img">
                         <img src={this.state.post.post_image} alt="" className="post-pic" />
                     </div>
@@ -95,11 +96,13 @@ class Posts extends React.Component{
                                 <li><strong>City:</strong> {this.state.post.city}</li>
                             </ul>
                         </div>
-  
+                        <div className="postrow"><p><strong>Hourly fare:</strong> ${this.state.post.fare}</p></div>
+                    
                         <div className="postButtons">
                             {typeOfUser==="provider"?<button className="post-btn" data-testid="post-delete" onClick={this.deletePost} >Delete</button>:""} 
-                            {typeOfUser==="provider"?<button className="post-btn" data-testid="post-edit" onClick={this.updatePost}  >Edit </button>:""} 
-                            <button className="post-btn" onClick={this.goBack} >Hire Me!</button>
+                            {typeOfUser==="provider"?<button className="post-btn" data-testid="post-edit" onClick={this.updatePost} >Edit </button>:""} 
+                            {typeOfUser==="user"?<Link to={'/hire/'+this.props.match.params.id}><button className="post-btn" >Hire Me!</button></Link>:null}
+                            {typeOfUser==="user"?<Link to={'/contact/'+this.props.match.params.id}><button className="post-btn">Conctact Me!</button></Link>:null}
                             <button className="post-btn" onClick={this.goBack} >Back </button>
                         </div>
                     </div>

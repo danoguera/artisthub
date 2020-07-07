@@ -71,7 +71,7 @@
     cursor: pointer;
     transition: 0.2s;
     font-size: 20px;
-    margin-top: 100px;
+    margin-top: 15px;
     line-height: 20px;
 }
 
@@ -99,5 +99,6 @@
 
     .photographerHeader h1 {
         text-align: left;
+        margin-top: 25px;
     }
 }

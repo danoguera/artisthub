@@ -17,7 +17,9 @@ import Payment from './pages/Payment';
 import PaymentResponse from './pages/PaymentResponse';
 import Forgot from './pages/Forgot';
 import changePassword from './pages/changePassword';
-
+import Contact from './pages/Contact';
+import Hire from './pages/Hire';
+import ServicePaymentResponse from './pages/ServicePaymentResponse';
 
 class App extends React.Component {
   constructor(){
@@ -63,6 +65,9 @@ class App extends React.Component {
             <UserRoute exact path="/Wedding"  component={List}></UserRoute>
             <UserRoute exact path="/catsub/:category/:subcategory"  component={List}></UserRoute>
             <UserRoute exact path="/category/:id"  component={ListCategory}></UserRoute>
+            <UserRoute exact path="/contact/:id"  component={Contact}></UserRoute>
+            <UserRoute exact path="/hire/:id"  component={Hire}></UserRoute>
+            <UserRoute exact path="/servicepaymentresponse/:id"  component={ServicePaymentResponse}></UserRoute>
             <ProviderRoute exact path="/posts/create"  component={CreatePost}></ProviderRoute>
             <ProviderRoute exact path="/posts/create/:id"  component={CreatePost}></ProviderRoute>
             <GenericRoute exact path="/posts/:id"  component={Posts}></GenericRoute>
@@ -106,19 +111,15 @@ function UserRoute(props){
 } 
 
 function ProviderRoute(props){
-  console.log("Estoy dentro de Provider Route");
   const token = localStorage.getItem("token");
   const typeOfUser = localStorage.getItem("typeOfUser");
   if (!token){
     return <Redirect to="/login"></Redirect>
   } 
   if ( token && typeOfUser==="provider" ){
-    console.log("Estoy 2ndo if de PR");
     return (<Route {...props} ></Route>);    
   } 
   return <Redirect to="/home"></Redirect>
 } 
-
- 
 
 export default App;

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import './PaymentResponse.css';
+// import './ServicePaymentResponse.css';
 
 function queryString(query){
     const res = {};
@@ -12,13 +12,19 @@ function queryString(query){
     return res;
 }
 
-async function updateSubscriptionDate(refPago) {
+async function updatePayment(refPago,postId) {
+        const message = localStorage.getItem('message');
+        localStorage.removeItem('message');
+        const eventDate = localStorage.getItem('eventDate');
+        localStorage.removeItem('eventDate');
         const { data } = await axios({
-        method: 'PUT',
-        url: process.env.REACT_APP_SERVER_URL + "/provider/endDate",
+        method: 'POST',
+        url: process.env.REACT_APP_SERVER_URL + "/posts/payment/"+postId,
         headers: { "Authorization": localStorage.getItem("token") },
         data: {
             refPago,
+            message,
+            eventDate
         }
       });
       return data;
@@ -47,7 +53,7 @@ class PaymentResponse extends React.Component{
         }).then(async(response) => {
             if (response.data.data.x_response==="Aceptada"){
                 this.setState({message:"Payment Successful!"});
-                const { endDate } = await updateSubscriptionDate(ref_payco);
+                const { endDate } = await updatePayment(ref_payco,this.props.match.params.id);
                 //OJO Preguntar si ese async/await esta bien
                 localStorage.setItem("active","true");
                 this.setState({

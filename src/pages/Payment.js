@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import './Payment.css';
 
 class Payment extends React.Component{
     constructor(){
@@ -24,11 +24,9 @@ class Payment extends React.Component{
 
         })
           .then(response =>{
-              console.log(response)
                this.setState({providerData: response.data, loading: false});
            })
           .catch(error =>{
-            console.log(error);
             this.setState({error: true} )
            })
           .finally( () => this.setState({loading: false})); 
@@ -43,7 +41,7 @@ class Payment extends React.Component{
 
           handler.open({
             external: 'false',
-            amount: '50000',
+            amount: '20000',
             tax: '0',
             tax_base: '0',
             name: 'Suscripcion Artisthub',
@@ -71,8 +69,9 @@ class Payment extends React.Component{
     render(){
         
         return (
-                <div className="postContainer">
-                    <button className="post-btn" onClick={this.handlePayment} > Pay  </button>
+                <div className="payContainer">
+                    <p>Complete your subscription by paying your monthly fee.</p>
+                    <button className="post-btn" onClick={this.handlePayment} >Pay</button>
                 </div>
         )
     }

@@ -2,20 +2,24 @@
     font-size: 40px;
     text-align: center;
     color: white;
-    padding-top: 70px;;
+    padding-top: 2px;;
   }
 
   .mainProvContainer {
-    padding-top: 70px;;
+    padding-top: 20px;;
   }
 
 .provServices{
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
    }
    
    .provServices div{
-     margin: 16px 16px 0;
-     width: calc(100% - 32px);
+
+     margin: 16px 15px 0 15px;
+     width: 280px;
      height: 300px;
    }
    
@@ -32,9 +36,9 @@
      font-size: 50px;
      color: #FFFFFF;
      text-align: center;
-     padding-top: 60px;
+     padding-top: 10px;
      line-height: 80px;
-     text-shadow: 2px 2px 8px #111;
+     text-shadow: 24px 42px 28px #000000;
      font-weight: 900;
      cursor: pointer;
    }
@@ -55,7 +59,7 @@
      line-height: 230px;
      text-shadow: 2px 2px 8px #111;
      font-weight: 900;
-     padding-top: 35px;
+     padding-top: 10px;
    }
    
 
@@ -64,20 +68,21 @@
    @media only screen and (min-width: 1000px){
 
     .provServices div{
-        margin: 16px 16px 0;
-        width: calc(50% - 32px);
-        height: 300px;
-        float: left;
+      display: inline-block;
+      /* margin: 0 auto; */
+      width: calc(35% - 10px);
+      height: 400px;
+      /* float: left; */
+      
       }
     
       .provService2 h3{
         line-height: 200px;
-        padding-top: 0px;
+        padding-top: 40px;
       }
     
       .provService1 h3{
         line-height: 200px;
-        padding-top: 0px;
+        padding-top: 40px;
       }
-   }
-   
+  }

@@ -30,6 +30,15 @@
   font-size: 20px;
 }
 
+.boxSignup h5{
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 25px;
+  width: 880px;
+  margin: 5px auto;
+  font-weight: 500;
+}
+
 .boxSignup select{
   font-size: 14px;
   display: block;
