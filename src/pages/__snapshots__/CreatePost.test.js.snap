@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreatePost should render correctly 1`] = `
+<main>
+  <section>
+    <div
+      class="service"
+    >
+      <div
+        class="boxService"
+      >
+        <h1>
+          Create your service
+        </h1>
+        <h2>
+          Please fill up the form
+        </h2>
+        <form>
+          <input
+            class="inputBoxService"
+            data-testid="post-title"
+            id="title"
+            name="title"
+            placeholder="Enter your service title"
+            type="text"
+            value=""
+          />
+          <br />
+          <textarea
+            class="textBox"
+            id="description"
+            name="description"
+            placeholder="Enter your service description"
+          />
+          <br />
+          <select
+            data-testid="category"
+            id="category"
+            name="category"
+          >
+            <option
+              value=""
+            >
+              Pick your Service:
+            </option>
+            <option
+              value="Music"
+            >
+              Music
+            </option>
+            <option
+              value="Photography"
+            >
+              Photography
+            </option>
+            <option
+              value="Videography"
+            >
+              Videography
+            </option>
+          </select>
+          <br />
+          <select
+            id="subcategory"
+            name="subcategory"
+          >
+            <option
+              value=""
+            >
+              Select a Subcategory
+            </option>
+            <option
+              value="Wedding"
+            >
+              Wedding
+            </option>
+            <option
+              value="Aerial"
+            >
+              Aerial
+            </option>
+            <option
+              value="Food"
+            >
+              Food
+            </option>
+            <option
+              value="Models"
+            >
+              Models
+            </option>
+          </select>
+          <br />
+          <select
+            class="countries"
+            id="countryId"
+            name="country"
+          >
+            <option
+              value=""
+            >
+              Select your country:
+            </option>
+            <option
+              value="Australia"
+            >
+              Australia 
+            </option>
+            <option
+              value="Colombia"
+            >
+              Colombia
+            </option>
+            <option
+              value="Congo"
+            >
+              Congo
+            </option>
+            <option
+              value="Croatia"
+            >
+              Croatia
+            </option>
+            <option
+              value="Cyprus"
+            >
+              Cyprus
+            </option>
+          </select>
+          <br />
+          <select
+            class="states"
+            id="stateId"
+            name="state"
+          >
+            <option
+              value=""
+            >
+              Select your state:
+            </option>
+            <option
+              value="Antioquia"
+            >
+              Antioquia
+            </option>
+            <option
+              value="Atlantico"
+            >
+              Atlantico
+            </option>
+            <option
+              value="Bogota"
+            >
+              Bogota
+            </option>
+            <option
+              value="Santander"
+            >
+              Santander
+            </option>
+            <option
+              value="Victoria"
+            >
+              Victoria
+            </option>
+          </select>
+          <br />
+          <select
+            class="cities"
+            id="cityId"
+            name="city"
+          >
+            <option
+              value=""
+            >
+              Select your city:
+            </option>
+            <option
+              value="Bogota"
+            >
+              Bogota
+            </option>
+            <option
+              value="Barranquilla"
+            >
+              Curramba
+            </option>
+            <option
+              value="Bucaramanga"
+            >
+              Bucaramanga
+            </option>
+            <option
+              value="Cali"
+            >
+              Cali
+            </option>
+            <option
+              value="Medellin"
+            >
+              Medellin
+            </option>
+            <option
+              value="Melbourne"
+            >
+              Melbourne
+            </option>
+          </select>
+          <br />
+          <input
+            data-testid="post_image"
+            id="post_image"
+            name="post_image"
+            type="file"
+            value=""
+          />
+          <label
+            for="post_image"
+          >
+            <span
+              class="material-icons"
+            >
+              cloud_upload
+            </span>
+            <p>
+              Upload a Photo
+            </p>
+          </label>
+          <br />
+          <input
+            class="submit-btn"
+            data-testid="submit-btn"
+            type="submit"
+            value="Submit"
+          />
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+`;

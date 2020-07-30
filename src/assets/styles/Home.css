@@ -1,0 +1,99 @@
+.mainContainer h1{
+    font-size: 40px;
+    text-align: center;
+    color: white;
+  }
+
+  .mainContainer{
+    padding: 20px 0;
+  }
+  
+
+.services{
+    width: 100%;
+   }
+   
+   .services div{
+     margin: 10px 16px 0;
+     width: calc(100% - 32px);
+     height: 400px;
+   }
+   
+   .service1{
+     background-image: url("../images/mujerfoto.jpeg");
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     color: #FFFFFF;
+     opacity: 0.8;
+   }
+   
+   .service1 h3{
+     font-size: 50px;
+     color: #FFFFFF;
+     text-align: center;
+     text-shadow: 2px 2px 8px #111;
+     font-weight: 900;
+     cursor: pointer;
+     line-height: 370px;
+   }
+   
+   .service2{
+     background-image: url("../images/camfoto.jpeg");
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     color: #FFFFFF;
+     opacity: 0.9;
+   }
+   
+   .service2 h3{
+     font-size: 50px;
+     color: #FFFFFF;
+     text-align: center;
+     text-shadow: 2px 2px 8px #111;
+     font-weight: 900;
+     line-height: 370px;
+   }
+   
+   .service3{
+     background-image: url("../images/micfoto.jpeg");
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     color: #FFFFFF;
+     opacity: 0.9;
+   }
+   
+   .service3 h3{
+     font-size: 50px;
+     color: #FFFFFF;
+     text-align: center;
+     text-shadow: 2px 2px 8px #111;
+     font-weight: 900;
+     line-height: 370px;
+   }
+
+   @media only screen and (min-width: 1000px){
+
+    .services div{
+        margin: 16px 5px 0 28px;
+        width: calc(33% - 35px);
+        height: 400px;
+        float: left;
+      }
+    
+      .service2 h3{
+        line-height: 280px;
+      }
+    
+      .service1 h3{
+        line-height: 280px;
+      }
+    
+      .service3 h3{
+        line-height: 280px;
+      }
+
+   }
+   

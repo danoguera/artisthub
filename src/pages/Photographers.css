@@ -1,0 +1,104 @@
+
+  
+.photographerSection{
+    padding-top: 1px;
+}
+  
+
+.photographerSection h1 {
+    font-size: 40px;
+    color: white;
+    text-align: left;
+    
+}
+
+
+.photographerSection h2 {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 8px #000;
+}
+
+.photographerImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photographerPic {
+    max-width: 180px;
+    position: relative;
+    left: 0;
+    margin: 10px 0;
+    filter: drop-shadow(-6px 40px 23px rgba(black, 1.5));
+    border-radius: 6px;
+}
+
+.photographerDetails {
+    padding: 0 20px 0 20px;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+.photographerDetails p {
+    font-size: 20px;
+}
+
+.photoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 5px;
+    padding-bottom: 30px;
+    margin: 0 10px 10px 10px;
+}
+
+.photographerHeader h1 {
+    text-align: center;
+    margin: 0;
+}
+
+.profileButton {
+    width: 220px;
+    height: 60px;
+    background: #F44336;
+    border: none;
+    border-radius: 2px;
+    color: #FFF;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 20px;
+    margin-top: 15px;
+    line-height: 20px;
+}
+
+@media only screen and (min-width: 1000px) {
+ 
+    .photoContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        margin-top: 15px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .profileButton {
+        margin-top: 20px;
+    }
+    .photographerDetails {
+        padding: 0 20px 20px 20px;
+        border-radius: 5px;
+        color: #FFFFFF;
+        width: 90%;
+    }
+
+    .photographerHeader h1 {
+        text-align: left;
+        margin-top: 25px;
+    }
+}

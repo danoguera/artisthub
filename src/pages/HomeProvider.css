@@ -1,0 +1,88 @@
+.mainProvContainer h1{
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    padding-top: 2px;;
+  }
+
+  .mainProvContainer {
+    padding-top: 20px;;
+  }
+
+.provServices{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   }
+   
+   .provServices div{
+
+     margin: 16px 15px 0 15px;
+     width: 280px;
+     height: 300px;
+   }
+   
+   .provService1{
+     background-image: url("../assets/images/create.jpg");
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     color: #FFFFFF;
+     opacity: 0.8;
+   }
+   
+   .provService1 h3{
+     font-size: 50px;
+     color: #FFFFFF;
+     text-align: center;
+     padding-top: 10px;
+     line-height: 80px;
+     text-shadow: 2px 2px 8px #111;
+     font-weight: 900;
+     cursor: pointer;
+   }
+   
+   .provService2{
+     background-image: url("../assets/images/list.jpg");
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     color: #FFFFFF;
+     opacity: 0.9;
+   }
+   
+   .provService2 h3{
+     font-size: 50px;
+     color: #FFFFFF;
+     text-align: center;
+     line-height: 230px;
+     text-shadow: 2px 2px 8px #111;
+     font-weight: 900;
+     padding-top: 10px;
+   }
+   
+
+
+   
+   @media only screen and (min-width: 1000px){
+
+    .provServices div{
+      display: inline-block;
+      /* margin: 0 auto; */
+      width: calc(35% - 10px);
+      height: 400px;
+      /* float: left; */
+      
+      }
+    
+      .provService2 h3{
+        line-height: 200px;
+        padding-top: 40px;
+      }
+    
+      .provService1 h3{
+        line-height: 200px;
+        padding-top: 40px;
+      }
+  }

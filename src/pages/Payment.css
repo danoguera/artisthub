@@ -1,0 +1,26 @@
+.payContainer{
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0,0,0,0.4);
+    padding: 20px 0;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    margin: 40px 40px 15px 40px;
+  }
+
+  .payContainer p{
+    color: #FFFFFF;
+    font-size: 22px;
+  }
+
+  @media only screen and (min-width: 1000px){
+
+    .payContainer{
+      width: 750px;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      margin-top: 60px;
+    }
+  }

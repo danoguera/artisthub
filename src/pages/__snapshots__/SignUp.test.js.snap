@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp should render correctly 1`] = `
+<main>
+  <section>
+    <div
+      class="signup"
+    >
+      <div
+        class="boxSignup"
+      >
+        <h1>
+          Create your profile
+        </h1>
+        <h2>
+          Please fill up the form
+        </h2>
+        <form>
+          <select
+            class="inputBoxSignup"
+            data-testid="typeOfUser"
+            id="typeOfUser"
+            name="typeOfUser"
+          >
+            <option
+              value=""
+            >
+              Select your type of user:
+            </option>
+            <option
+              value="user"
+            >
+              User
+            </option>
+            <option
+              value="provider"
+            >
+              Provider
+            </option>
+          </select>
+          <br />
+          <input
+            class="inputBoxSignup"
+            data-testid="name"
+            id="name"
+            name="name"
+            placeholder="Type your name"
+            type="text"
+            value=""
+          />
+          <br />
+          <input
+            class="inputBoxSignup"
+            id="lastname"
+            name="lastname"
+            placeholder="Type your lastname"
+            type="text"
+            value=""
+          />
+          <br />
+          <input
+            class="inputBoxSignup"
+            id="password"
+            name="password"
+            placeholder="Type your password"
+            type="password"
+            value=""
+          />
+          <br />
+          <input
+            class="inputBoxSignup"
+            id="verifyPassword"
+            name="verifyPassword"
+            placeholder="Verify your password"
+            type="password"
+            value=""
+          />
+          <br />
+          <input
+            class="inputBoxSignup"
+            id="email"
+            name="email"
+            placeholder="Type your email"
+            type="text"
+            value=""
+          />
+          <br />
+          <input
+            class="inputBoxSignup"
+            id="username"
+            name="username"
+            placeholder="Type your username"
+            type="text"
+            value=""
+          />
+          <br />
+          <input
+            class="inputBoxSignup"
+            id="documentId"
+            name="documentId"
+            placeholder="Type your Document ID"
+            type="text"
+            value=""
+          />
+          <br />
+          <p>
+            Birthdate: 
+            <div
+              class="react-datepicker-wrapper"
+            >
+              <div
+                class="react-datepicker__input-container"
+              >
+                <input
+                  class="date"
+                  type="text"
+                  value="01/01/2001"
+                />
+              </div>
+            </div>
+          </p>
+          <br />
+          <select
+            class="countries"
+            id="countryId"
+            name="country"
+          >
+            <option
+              value=""
+            >
+              Select Country
+            </option>
+            <option
+              value="Australia"
+            >
+              Australia 
+            </option>
+            <option
+              value="Colombia"
+            >
+              Colombia
+            </option>
+          </select>
+          <br />
+          <select
+            class="states"
+            id="stateId"
+            name="state"
+          >
+            <option
+              value=""
+            >
+              Select State
+            </option>
+            <option
+              value="Victoria"
+            >
+              Victoria
+            </option>
+            <option
+              value="Atlantico"
+            >
+              Atlantico
+            </option>
+            <option
+              value="Bogota"
+            >
+              Bogota
+            </option>
+          </select>
+          <br />
+          <select
+            class="cities"
+            id="cityId"
+            name="city"
+          >
+            <option
+              value=""
+            >
+              Select your city:
+            </option>
+            <option
+              value="Barranquilla"
+            >
+              Barranquilla
+            </option>
+            <option
+              value="Bogota"
+            >
+              Bogota
+            </option>
+            <option
+              value="Bucaramanga"
+            >
+              Bucaramanga
+            </option>
+            <option
+              value="Cali"
+            >
+              Cali
+            </option>
+            <option
+              value="Medellin"
+            >
+              Medellin
+            </option>
+            <option
+              value="Melbourne"
+            >
+              Melbourne
+            </option>
+          </select>
+          <br />
+          <input
+            class="submit-btn"
+            data-testid="submit-btn"
+            type="submit"
+            value="Submit"
+          />
+          <br />
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+`;
