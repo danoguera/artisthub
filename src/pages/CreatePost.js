@@ -160,7 +160,7 @@ class CreatePost extends React.Component{
                                 <br />
                                 <select onChange={this.handleInput} value={this.state.city} name="city" className="cities" id="cityId">
                                     <option value="" >Select your City</option>
-                                    <option value="Bogota">Bogotá</option>
+                                    <option value="Bogota">Bogotá, DC</option>
                                     <option value="Barranquilla">Barranquilla</option>
                                     <option value="Bucaramanga">Bucaramanga</option>
                                     <option value="Cali">Cali</option>
@@ -168,13 +168,14 @@ class CreatePost extends React.Component{
                                     <option value="Melbourne">Melbourne</option>
                                 </select>
                                 <br />
+                                <input id="fare" name="fare" type="text" className="inputBoxService" data-testid="fare" placeholder="Enter your hourly fare" value={this.state.fare} onChange={this.handleInput} />
+                                <br />
                                 <input id="post_image" name="post_image" data-testid="post_image" type="file" value={this.state.post_image_ooo} onChange={this.fileSelectedHandler} />
                                 <label htmlFor="post_image">
                                     <span className="material-icons">cloud_upload</span>
                                     <p>Upload a Photo</p>
                                 </label>
                                 <br />
-                                <input id="fare" name="fare" type="text" className="inputBoxService" data-testid="fare" placeholder="Enter your hourly fare" value={this.state.fare} onChange={this.handleInput} />
                                 <input type="submit" className="submit-btn" data-testid="submit-btn" onSubmit={this.handleSubmit} value={this.state.postId ? "Update" : "Submit"} />
                             </form>
                         </div>

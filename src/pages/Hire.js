@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import './SignUp.css';
+import './Hire.css';
 
 class Contact extends React.Component{
     constructor(){
@@ -144,8 +144,8 @@ class Contact extends React.Component{
         return (
             <main>
                 <section>
-                    <div className="signupFrame">
-                        <div className="boxSignup">
+                    <div className="hireFrame">
+                        <div className="boxHire">
                             <h1>Please fill up this form</h1>
                             {/* <h2>Please fill up the form</h2> */}
                             <form onSubmit={this.handlePayment} >
@@ -155,8 +155,9 @@ class Contact extends React.Component{
                                 <p>Event Date: <DatePicker selected={this.state.eventDate} onChange={this.handleChangeDate} showTimeSelect timeFormat="HH:mm" timeIntervals={15} dateFormattttt="yyyy/MM/dd" className="date" /></p>
                                 <br />
                                 <input id="duration" name="duration" type="text" className="inputBoxService" placeholder="Event duration in hours" value={this.state.duration} onChange={this.handleInput} />
+                                <br />
                                 <p>Total Fare: {(this.state.post.fare && this.state.duration) ?this.state.duration * this.state.post.fare:0}</p>
-                                <input type="submit" data-testid="submit-btn" className="submit-btn" value='Pay' />
+                                <input type="submit" data-testid="submit-btn" className="hireSubmitBtn" value='Pay' />
                                 <br/>
                             </form>
                         </div>

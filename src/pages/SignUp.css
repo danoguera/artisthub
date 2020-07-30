@@ -129,7 +129,7 @@ input[type="file"]{
   height: 32px;
   border: 1px solid rgb(199, 190, 190);
   outline: none;
-  font-size: 13px;
+  font-size: 19px;
   transition: 0.2s;
   color: #FFFFFF;
   border-radius: 5px;
@@ -181,7 +181,7 @@ input[type="file"]{
   .boxSignup{
     background-color: #E8E8E8;
     width: 1000px;
-    height: 920px;
+    height: 900px;
     /* margin: auto; */
     background: rgba(0,0,0,0.4);
     padding: 10px;
@@ -262,7 +262,6 @@ input[type="file"]{
     height: 32px;
     border: 1px solid rgb(199, 190, 190);
     outline: none;
-    font-size: 15px;
     transition: 0.2s;
     color: #FFFFFF;
     border-radius: 5px;

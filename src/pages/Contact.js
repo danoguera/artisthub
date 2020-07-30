@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import './SignUp.css';
+import './Contact.css';
 import './PaymentResponse.css';
 
 class Contact extends React.Component{
@@ -103,13 +103,13 @@ class Contact extends React.Component{
         return (
             <main>
                 <section>
-                    <div className="signupFrame">
-                        <div className="boxSignup">
+                    <div className="contactFrame">
+                        <div className="contactSignup">
                             <h1>Please fill up this form</h1>
                             <form onSubmit={this.handleSubmit} >
                                 <br />
                                 <textarea id="description" name="description" className="textBox" placeholder="Write a message to the photographer" value={this.state.description} onChange={this.handleInput} />
-                                <input type="submit" data-testid="submit-btn" className="submit-btn" value='Send' />
+                                <input type="submit" data-testid="submit-btn" className="contactSubmitBtn" value='Send' />
                                 <br/>
                             </form>
                         </div>

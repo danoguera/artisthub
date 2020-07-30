@@ -1,8 +1,4 @@
-.message{
-    text-align: center;
-}
-
-.contactFrame {
+.hireFrame {
     display: flex;
     justify-content: center;
     margin-top: 5px;
@@ -15,7 +11,7 @@
     height: 500px; */
   }
   
-  .contactSignup{
+  .boxHire{
     background-color: #E8E8E8;
     width: 450px;
     height: 780px;
@@ -26,15 +22,15 @@
     border-radius: 8px;
   }
   
-  .contactSignup h1{
+  .boxHire h1{
     font-size: 30px;
   }
   
-  .contactSignup h2{
+  .boxHire h2{
     font-size: 20px;
   }
   
-  .contactSignup h5{
+  .boxHire h5{
     font-size: 18px;
     color: #ffffff;
     line-height: 25px;
@@ -43,7 +39,7 @@
     font-weight: 500;
   }
   
-  .contactSignup select{
+  .boxHire select{
     font-size: 14px;
     display: block;
     background: rgba(240,240,240,0.05);
@@ -65,7 +61,7 @@
     font-size: 18px;
   }
   
-  .contactSignup select option {
+  .boxHire select option {
     color: black;
   }
   
@@ -73,7 +69,7 @@
     display: none;
   }
   
-  .contactSignup label{
+  .boxHire label{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,17 +82,17 @@
     width: 89%;
   }
   
-  .contactSignup label p{
+  .boxHire label p{
     margin-left: 6px;
     font-size: 14px;
   }
   
   ::placeholder{
     color: #FFFFFF;
-    font-size: 18px;
+    font-size: 19px;
   }
   
-  .contactSignup p {
+  .boxHire p {
     display: flex;
     justify-content: left;
     /* text-align: right; */
@@ -123,9 +119,9 @@
   }
   
   
-  .input.contactSignup{
+  .inputboxHire{
     display: block;
-    .contact-sizing: border-.contact;
+    box-sizing: border-box;
     margin: 0 10px;
     padding: 30px;
     background: rgba(240,240,240,0.05);
@@ -133,16 +129,16 @@
     height: 32px;
     border: 1px solid rgb(199, 190, 190);
     outline: none;
-    font-size: 19px;
+    font-size: 13px;
     transition: 0.2s;
     color: #FFFFFF;
     border-radius: 5px;
     line-height: 40px;
   }
   
-  .text.contact{
+  .textBox{
     display: block;
-    .contact-sizing: border-.contact;
+    box-sizing: border-box;
     margin: auto;
     padding: 10px;
     background: transparent;
@@ -158,17 +154,17 @@
     border-radius: 5px;
   }
   
-  .contactSubmitBtn{
-    width: 100px;
+  .hireSubmitBtn{
+    width: 120px;
     height: 32px;
     background: #F44336;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     color: #FFF;
     cursor: pointer;
     transition: 0.2s;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
   }
   
   .warning {
@@ -183,10 +179,10 @@
       margin-top: 10px;
     }
   
-    .contactSignup{
+    .boxHire{
       background-color: #E8E8E8;
       width: 1000px;
-      height: 300px;
+      height: 470px;
       /* margin: auto; */
       background: rgba(0,0,0,0.4);
       padding: 10px;
@@ -194,15 +190,15 @@
       margin-bottom: 10px;
     }
     
-    .contactSignup h1{
+    .boxHire h1{
       font-size: 30px;
     }
     
-    .contactSignup h2{
+    .boxHire h2{
       font-size: 20px;
     }
     
-    .contactSignup select{
+    .boxHire select{
       display: block;
       background: rgba(240,240,240,0.05);
       color: #FFFFFF;
@@ -219,7 +215,7 @@
     
     }
   
-    .contactSignup p{
+    .boxHire p{
       display: flex;
       justify-content: left;
       /* text-align: right; */
@@ -236,7 +232,7 @@
       display: none;
     }
     
-    .contactSignup label{
+    .boxHire label{
       display: flex;
       justify-content: center;
       align-items: center;
@@ -248,7 +244,7 @@
       width: 89%;
     }
     
-    .contactSignup label p{
+    .boxHire label p{
       margin-left: 6px;
       font-size: 14px;
     }
@@ -257,9 +253,9 @@
       color: #FFFFFF;
     }
     
-    .input.contactSignup{
+    .inputboxHire{
       display: block;
-      .contact-sizing: border-.contact;
+      box-sizing: border-box;
       margin: auto;
       padding: 20px 15px;
       background: rgba(240,240,240,0.05);
@@ -267,15 +263,16 @@
       height: 32px;
       border: 1px solid rgb(199, 190, 190);
       outline: none;
+      font-size: 18px;
       transition: 0.2s;
       color: #FFFFFF;
       border-radius: 5px;
       line-height: 50px;
     }
     
-    .text.contact{
+    .textBox{
       display: block;
-      .contact-sizing: border-.contact;
+      box-sizing: border-box;
       margin: auto;
       padding: 10px;
       background: transparent;
@@ -283,7 +280,7 @@
       height: 92px;
       border: 1px solid #FFF;
       outline: none;
-      font-size: 15px;
+      font-size: 19px;
       transition: 0.2s;
       color: #FFF;
       font-weight: 400;

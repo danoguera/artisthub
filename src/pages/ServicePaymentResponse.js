@@ -54,7 +54,7 @@ class PaymentResponse extends React.Component{
             if (response.data.data.x_response==="Aceptada"){
                 this.setState({message:"Payment Successful!"});
                 const { endDate } = await updatePayment(ref_payco,this.props.match.params.id);
-                //OJO Preguntar si ese async/await esta bien
+                
                 localStorage.setItem("active","true");
                 this.setState({
                     endDate,

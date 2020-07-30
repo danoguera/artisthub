@@ -74,7 +74,7 @@ class Login extends React.Component{
                     <div className="login">
                         <div className="box">
                             <h1>Welcome to artistHub!</h1>
-                            <h2>Sign in and choose your service...</h2>
+                            <h2>Sign in and choose your service</h2>
                             <input type="text" className="inputBox" placeholder="E-mail address" value={this.state.email} onChange={this.handleInput} name="email" id="email"/>
                             <input type="password" data-testid="pwd-input" className="inputBox" placeholder="Password" value={this.state.password} onChange={this.handleInput} name="password" id="password"/>
                             <label htmlFor="isProvider" data-testid="isProvLabel">Are you a provider?</label><input type="checkbox" name="isProvider" id="isProvider" data-testid="isProvider" checked={this.state.isProvider} onChange={this.handleInput} className="check" />  <br />
